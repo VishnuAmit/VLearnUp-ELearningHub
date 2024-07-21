@@ -1,0 +1,75 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;0,700;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Font+Awesome+5+Free:wght@400&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  @apply leading-[normal] m-0;
+}
+*,
+::before,
+::after {
+  border-width: 0;
+} */
+
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;0,700;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Font+Awesome+5+Free:wght@400&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply leading-[normal] m-0;
+}
+
+*,
+::before,
+::after {
+  border-width: 0;
+}
+
+.app-scale {
+  transform: scale(0.8); 
+  transform-origin: top left; 
+  width: 125%; 
+  height: 125%;
+  overflow: hidden;
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;0,700;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Font+Awesome+5+Free:wght@400&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+body {
+  @apply leading-[normal] m-0;
+}
+
+*,
+::before,
+::after {
+  border-width: 0;
+}
+
+.app-scale {
+  transform: scale(0.8); /* Scale down to 80% */
+  transform-origin: top left; /* Make sure scaling is from the top-left corner */
+  width: 125%; /* Adjust width to accommodate scaling */
+  height: 125%; /* Adjust height to accommodate scaling */
+
+}
+
+
+
