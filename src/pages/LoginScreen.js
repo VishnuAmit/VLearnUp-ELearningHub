@@ -1,121 +1,130 @@
-// import React from "react";
+import * as React from 'react';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import Link from '@mui/material/Link';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../firebase'; // Make sure to import your Firebase configuration
+import { useState } from 'react';
 
-// const LoginScreen = ({ isVisible, onClose }) => {
-//   return (
-//     <div
-//       className={`fixed top-0 right-0 h-full w-80 bg-white shadow-lg transform transition-transform duration-300 ${
-//         isVisible ? "translate-x-0" : "translate-x-full"
-//       }`}
-//     >
-//       <button onClick={onClose} className="absolute top-4 left-4 p-2 bg-red-500 text-white rounded">
-//         Close
-//       </button>
-//       <div className="p-8">
-//         <h2 className="text-xl font-bold mb-4">Login</h2>
-//         <form>
-//           <div className="mb-4">
-//             <label htmlFor="username" className="block text-gray-700">
-//               Username
-//             </label>
-//             <input
-//               type="text"
-//               id="username"
-//               className="w-full px-4 py-2 border rounded-lg"
-//             />
-//           </div>
-//           <div className="mb-4">
-//             <label htmlFor="password" className="block text-gray-700">
-//               Password
-//             </label>
-//             <input
-//               type="password"
-//               id="password"
-//               className="w-full px-4 py-2 border rounded-lg"
-//             />
-//           </div>
-//           <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded-lg">
-//             Login
-//           </button>
-//         </form>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default LoginScreen;
-
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
- 
-const slideIn = keyframes`
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-`;
- 
-const Overlay = styled.div`
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: flex-end;
-`;
- 
-const FormContainer = styled.div`
-  background: white;
-  width: 30%;
-  padding: 20px;
-  animation: ${slideIn} 0.3s ease-out;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
- 
-const CloseButton = styled.button`
-  align-self: flex-end;
-  background: none;
-  border: none;
-  font-size: 18px;
-  cursor: pointer;
-`;
- 
-const Input = styled.input`
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-`;
- 
-const SubmitButton = styled.button`
-  background-color: #000080;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 100%;
-  font-size: 16px;
-`;
- 
-function LoginForm({ closeForm }) {
+function Copyright(props) {
   return (
-<Overlay onClick={closeForm}>
-<FormContainer onClick={e => e.stopPropagation()}>
-<CloseButton onClick={closeForm}>&times;</CloseButton>
-<h2>Login</h2>
-<Input type="text" placeholder="Enter your mobile number" />
-<SubmitButton>Login</SubmitButton>
-<SubmitButton>Email Login</SubmitButton>
-</FormContainer>
-</Overlay>
+    <Typography variant="body2" color="text.secondary" align="center" {...props}>
+      {'Copyright © '}
+      <Link color="inherit" href="https://mui.com/">
+        Your Website
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
   );
 }
- 
-export default LoginForm;
+
+// TODO remove, this demo shouldn't need to reset the theme.
+const defaultTheme = createTheme();
+
+export default function SignIn() {
+  const [error, setError] = useState('');
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const email = data.get('email');
+    const password = data.get('password');
+
+    try {
+      const userAuth = await signInWithEmailAndPassword(auth, email, password);
+      // Signed in 
+      console.log('User signed in:', userAuth.user);
+      // Redirect or perform additional actions after successful sign-in
+    } catch (error) {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.error('Error signing in:', errorMessage);
+      setError('Failed to sign in. Please try again.');
+    }
+  };
+
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <Box
+          sx={{
+            marginTop: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Sign in
+          </Typography>
+          {error && (
+            <Typography color="error" variant="body2">
+              {error}
+            </Typography>
+          )}
+          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="email"
+              label="Email Address"
+              name="email"
+              autoComplete="email"
+              autoFocus
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+            />
+            <FormControlLabel
+              control={<Checkbox value="remember" color="primary" />}
+              label="Remember me"
+            />
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Sign In
+            </Button>
+            <Grid container>
+              <Grid item xs>
+                <Link href="#" variant="body2">
+                  Forgot password?
+                </Link>
+              </Grid>
+              <Grid item>
+                <Link href="#" variant="body2">
+                  {"Don't have an account? Sign Up"}
+                </Link>
+              </Grid>
+            </Grid>
+          </Box>
+        </Box>
+      </Container>
+    </ThemeProvider>
+  );
+}
