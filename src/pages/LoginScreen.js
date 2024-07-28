@@ -15,6 +15,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase'; // Make sure to import your Firebase configuration
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Copyright(props) {
   return (
@@ -34,6 +35,7 @@ const defaultTheme = createTheme();
 
 export default function SignIn() {
   const [error, setError] = useState('');
+  const navigate = useNavigate(); // Use navigate for redirection
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -45,6 +47,7 @@ export default function SignIn() {
       const userAuth = await signInWithEmailAndPassword(auth, email, password);
       // Signed in 
       console.log('User signed in:', userAuth.user);
+      navigate('/streamfinder'); // Redirect to pathfinder page
       // Redirect or perform additional actions after successful sign-in
     } catch (error) {
       const errorCode = error.code;

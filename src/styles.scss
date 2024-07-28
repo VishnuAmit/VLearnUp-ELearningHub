@@ -1,0 +1,140 @@
+body {
+  font-family: sans-serif;
+  background: #ffffff;  // White background
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.icon {
+  margin-bottom: 2rem; // Space between icon and form
+}
+
+.icon img {
+  width: 100px;  // Adjust size as needed
+  height: auto;  // Maintain aspect ratio
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f9f9f9;  // Light background for the form
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  max-width: 100%;  // Remove fixed width
+  width: auto;  // Allow width to adjust based on content
+  box-sizing: border-box;
+}
+
+form div {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  color: #333333;  // Dark Gray for labels
+}
+
+input,
+select,
+textarea {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  width: 100%;
+  height: 2rem;
+  border: 1px solid #cccccc;  // Gray border
+  border-radius: 4px;
+  box-sizing: border-box;
+  background: #f2f2f2;  // Light Gray background for inputs
+}
+
+input[type="submit"] {
+  height: 2.5rem;
+  font-size: 1rem;
+  color: #ffffff;  // White text color
+  background: #2c2d2d;  // Blue background
+  cursor: pointer;
+
+  &:hover {
+    background: #444a51;  // Dark Blue on hover
+  }
+}
+
+textarea {
+  height: 5rem;
+}
+
+
+
+.stream-heading {
+  margin-top: 2rem;  // Space between form and heading
+  text-align: center;  // Center text
+}
+
+.stream-heading h2 {
+  font-size: 2.5rem;  // Adjust font size as needed
+  color: #333333;  // Dark Gray color for heading
+}
+
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;  /* Increased space between cards */
+  justify-content: center;  /* Center align cards */
+  margin-top: 3rem;  /* Increased space between heading and cards */
+  padding: 1rem;  /* Added padding around the container */
+}
+.card {
+  width: 100%;  /* Full width on small screens */
+  max-width: 15rem;  /* Increased max width of cards */
+  box-sizing: border-box;
+  padding: 1.5rem;  /* Added padding inside the card */
+  margin: 0.5rem;  /* Added margin around each card */
+  border: 1px solid #ddd;  /* Added a border for better visual separation */
+  border-radius: 0.5rem;  /* Rounded corners for a softer look */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Added shadow for a lifted effect */
+  display: flex;  /* Use flexbox to center content */
+  flex-direction: column;  /* Stack content vertically */
+  align-items: center;  /* Center align content horizontally */
+  cursor: pointer;  /* Show pointer cursor to indicate the card is clickable */
+  transition: transform 0.3s ease;  /* Smooth scaling effect on hover */
+}
+
+.card-img {
+  max-width: 100%;  /* Ensure the image doesn't exceed the card width */
+  height: auto;  /* Maintain aspect ratio */
+  display: block;  /* Remove extra space below image */
+  margin-bottom: 1rem;  /* Space between image and heading */
+}
+
+.card-body {
+  text-align: center;  /* Center align text within the card body */
+}
+
+.card:hover {
+  transform: scale(1.05);  /* Scale the card slightly on hover */
+}
+/* Ensure card elements resize correctly on smaller screens */
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;  /* Stack cards vertically on small screens */
+    align-items: center;  /* Center align cards */
+    gap: 1.5rem;  /* Reduced gap between stacked cards */
+  }
+}
+
+.card-heading {
+  font-weight: bold;  /* Make the heading bold */
+  font-size: 1.5rem;  /* Increase font size */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);  /* Add drop shadow */
+}

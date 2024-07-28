@@ -59,6 +59,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import ELearning from "./pages/ELearning";
+import Streamfindercomp from "../src/pages/Streamfinder"; // Import the pathfinder page
 import './global.css';
 
 function App() {
@@ -80,6 +81,10 @@ function App() {
       case "/":
         title = "VLearnUp - Personalized Learning";
         metaDescription = "Personalized learning for your unique journey.";
+        break;
+      case "/streamfinder":
+        title = "VLearnUp - Pathfinder";
+        metaDescription = "Navigate your learning path.";
         break;
       default:
         title = "VLearnUp";
@@ -104,9 +109,11 @@ function App() {
     <div className="app-scale">
       <Routes>
         <Route path="/" element={<ELearning />} />
+        <Route path="/streamfinder" element={< Streamfindercomp/>} />
       </Routes>
     </div>
   );
 }
 
 export default App;
+
