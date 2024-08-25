@@ -61,6 +61,7 @@ import {
 import ELearning from "./pages/ELearning";
 import Streamfindercomp from "../src/pages/Streamfinder"; // Import the pathfinder page
 import './global.css';
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   const action = useNavigationType();
@@ -110,6 +111,7 @@ function App() {
       <Routes>
         <Route path="/" element={<ELearning />} />
         <Route path="/streamfinder" element={< Streamfindercomp/>} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </div>
   );

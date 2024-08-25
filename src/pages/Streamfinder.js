@@ -2,6 +2,7 @@ import { render } from "react-dom";
 import { useForm } from "react-cool-form";
 import "../styles.scss";
 import { Card, Button } from 'react-bootstrap';
+import { useNavigate } from "react-router-dom";
 
 const institutes = [
     "IIT Bombay",
@@ -116,6 +117,7 @@ function CardComponent({ title, text, buttonText, imgSrc , heading}) {
   
   
   function Streamfinder() {
+    const navigate = useNavigate();  // Use useNavigate hook for navigation
     const { form } = useForm({
       defaultValues: {
         firstName: "",
@@ -124,7 +126,10 @@ function CardComponent({ title, text, buttonText, imgSrc , heading}) {
         institute: "",
         message: ""
       },
-      onSubmit: (values) => alert(JSON.stringify(values, undefined, 2))
+      onSubmit: (values) => {
+        console.log(JSON.stringify(values, undefined, 2));
+        navigate("/dashboard"); // Redirect to dashboard.js when the form is submitted
+      }
     });
   
     return (
