@@ -50,6 +50,7 @@
 //   );
 // }
 // export default App;
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { useEffect } from "react";
 import {
@@ -62,6 +63,7 @@ import ELearning from "./pages/ELearning";
 import Streamfindercomp from "../src/pages/Streamfinder"; // Import the pathfinder page
 import './global.css';
 import Dashboard from "./pages/Dashboard";
+import Upload from "./pages/Upload";
 
 function App() {
   const action = useNavigationType();
@@ -112,6 +114,7 @@ function App() {
         <Route path="/" element={<ELearning />} />
         <Route path="/streamfinder" element={< Streamfindercomp/>} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/upload" element={<Upload />} />
       </Routes>
     </div>
   );
