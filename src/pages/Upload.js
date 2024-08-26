@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { css } from "@emotion/css";
 
+
 const UploadPage = () => {
     const [examFile, setExamFile] = useState(null);
     const [notesFile, setNotesFile] = useState(null);
@@ -97,9 +98,11 @@ const UploadPage = () => {
                         style={{ display: "none" }}
                         onChange={(e) => handleFileChange(e, setExamFile)}
                     />
-                    <label htmlFor="examResource" className={labelStyle}>
-                        Select Exam's Resource
-                    </label>
+                    {!examFile && (
+                        <label htmlFor="examResource" className={labelStyle}>
+                            Select Exam's Resource
+                        </label>
+                    )}
                     {examFile && <div className={fileDisplayStyle}>{examFile.name}</div>}
                 </div>
 
@@ -110,9 +113,11 @@ const UploadPage = () => {
                         style={{ display: "none" }}
                         onChange={(e) => handleFileChange(e, setNotesFile)}
                     />
-                    <label htmlFor="yourNotes" className={labelStyle}>
-                        Select Your Notes
-                    </label>
+                    {!notesFile && (
+                        <label htmlFor="yourNotes" className={labelStyle}>
+                            Select Your Notes
+                        </label>
+                    )}
                     {notesFile && <div className={fileDisplayStyle}>{notesFile.name}</div>}
                 </div>
 
@@ -122,5 +127,4 @@ const UploadPage = () => {
     );
 };
 
-export default UploadPage;
-
+export default UploadPage;
