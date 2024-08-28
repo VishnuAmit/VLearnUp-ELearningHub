@@ -293,7 +293,7 @@ const Navigation1 = ({ className = "" }) => {
           { label: "Schedule", icon: "/vuesaxlinearcalendaredit.svg" },
           { label: "Courses", icon: "/vuesaxlinearfolder2.svg" },
           { label: "Pro Features 1", icon: "/vuesaxlinearchart.svg", path: "/upload" },
-          { label: "Pro Features 2", icon: "/vuesaxlinearchart.svg" },
+          { label: "Pro Features 2", icon: "/vuesaxlinearchart.svg", path: "/sample" },
           { label: "Settings", icon: "/vuesaxlinearsetting2.svg" },
         ].map((item, index) => (
           <button

@@ -5,6 +5,8 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import "./global.css";
 // import 'bootstrap/dist/css/bootstrap.min.css';
+import '@syncfusion/ej2-react-pdfviewer/styles/material.css';
+
 
 const container = document.getElementById("root");
 const root = createRoot(container);
