@@ -109,21 +109,22 @@ const FrameComponent4 = ({ className = "" }) => {
                   </div>
                 </div>
                 <div className="flex flex-col items-start justify-start gap-[19px]">
-                  <div className="flex flex-col items-start justify-start">
-                    <b className="relative tracking-[0.02em] leading-[44px] z-[1] mq450:text-lgi mq450:leading-[35px]">
-                      JavaScript Class
-                    </b>
-                    <div className="relative text-xl tracking-[0.02em] leading-[180%] font-semibold z-[1] mt-[-10px] mq450:text-base mq450:leading-[29px]">
-                      Today at 10.00 AM
-                    </div>
-                  </div>
-                  <button className="cursor-pointer [border:none] pt-3 pb-[11px] pr-[47px] pl-12 bg-palevioletred-100 rounded-61xl flex flex-row items-start justify-start whitespace-nowrap z-[1] hover:bg-palevioletred-200">
-                    <div className="h-[50px] w-[180px] relative rounded-61xl bg-palevioletred-100 hidden" />
-                    <b className="relative text-xl inline-block font-nunito-sans text-white text-left min-w-[85px] z-[1]">
-                      Join Now
-                    </b>
-                  </button>
-                </div>
+  <div className="flex flex-col items-start justify-start">
+    <b className="relative tracking-[0.02em] leading-[44px] z-[1] mq450:text-lg mq450:leading-[35px]">
+      JavaScript Class
+    </b>
+    <div className="relative text-xl tracking-[0.02em] leading-[180%] font-semibold z-[1] mt-[-10px] mq450:text-base mq450:leading-[29px]">
+      Today at 10.00 AM
+    </div>
+  </div>
+  <button className="cursor-pointer border-none pt-3 pb-[11px] pr-[47px] pl-12 bg-palevioletred-100 rounded-full flex flex-row items-start justify-start whitespace-nowrap z-[1] transition-transform duration-300 hover:bg-palevioletred-200 hover:scale-105">
+    <div className="h-[50px] w-[180px] relative rounded-full bg-palevioletred-100 hidden" />
+    <b className="relative text-xl inline-block font-nunito-sans text-white text-left min-w-[85px] z-[1]">
+      Join Now
+    </b>
+  </button>
+</div>
+
               </div>
             </div>
           </div>
