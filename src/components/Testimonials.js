@@ -61,23 +61,25 @@ const Testimonials = ({ className = "" }) => {
 
     <div className="w-[700px] flex flex-col items-start justify-start gap-20 min-w-[700px] max-w-full text-3xl text-slategray-300 font-nunito-sans mq450:gap-6 mq850:gap-12 mq850:min-w-full mq1500:flex-1">
       <div className="w-[640px] h-20 flex flex-row items-start justify-center py-0 px-5 box-border max-w-full">
-        <div className="h-20 w-20 flex items-center justify-center">
-          <img
-            className="h-full w-full object-contain"
-            loading="lazy"
-            alt=""
-            src="/group-51.svg"
-          />
-        </div>
+      <div className="h-24 w-24 flex items-center justify-center rounded-full bg-lightgray shadow-md transition-all duration-300 hover:shadow-lg">
+  <img
+    className="h-full w-full object-contain p-2 transition-transform duration-300 hover:scale-105"
+    loading="lazy"
+    alt="Logo"
+    src="/group-51.svg"
+  />
+</div>
+
       </div>
 
       <div className="self-stretch flex flex-row items-start justify-start relative max-w-full">
-        <img
-          className="h-[779px] w-[560px] absolute !m-0 top-[-475px] left-[-280px] rounded-xl object-cover"
-          loading="lazy"
-          alt=""
-          src="/image-15@2x.png"
-        />
+      <img
+  className="h-[700px] w-[500px] absolute !m-0 top-[-400px] left-[-250px] rounded-xl object-cover transition-transform duration-300 hover:scale-105 shadow-lg"
+  loading="lazy"
+  alt="Description of the image"
+  src="/image-15@2x.png"
+/>
+
         <div className="flex-1 shadow-lg rounded-md bg-white flex flex-row items-start justify-center py-0 pr-6 pl-0 box-border gap-8 max-w-full z-1 mq850:flex-wrap mq850:gap-4 mq850:p-5">
           <div className="hidden max-w-full" />
           <div className="h-[329px] flex flex-col items-start justify-start py-0 pr-2.5 pl-0 box-border">
