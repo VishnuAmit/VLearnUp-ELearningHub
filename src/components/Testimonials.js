@@ -74,7 +74,7 @@ const Testimonials = ({ className = "" }) => {
 
       <div className="self-stretch flex flex-row items-start justify-start relative max-w-full">
       <img
-  className="h-[700px] w-[500px] absolute !m-0 top-[-400px] left-[-250px] rounded-xl object-cover transition-transform duration-300 hover:scale-105 shadow-lg"
+  className="h-[700px] w-[500px] absolute right-0 bottom-0 transform translate-x-[2%] rounded-xl object-cover transition-transform duration-300 hover:scale-105 shadow-lg"
   loading="lazy"
   alt="Description of the image"
   src="/image-15@2x.png"
