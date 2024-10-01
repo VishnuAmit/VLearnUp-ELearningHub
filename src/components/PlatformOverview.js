@@ -36,8 +36,8 @@ const PlatformOverview = ({ className = "" }) => {
               FOR INSTRUCTORS
             </h3>
             <div className="flex flex-row items-start justify-end py-0 pr-1 pl-[5px]">
-              <button className="cursor-pointer flex items-center justify-center py-4 px-8 bg-gradient-to-r from-blue-400 to-blue-600 rounded-2xl shadow-lg transition-transform transform hover:scale-105 duration-200">
-                <b className="relative text-3xl font-poppins text-white text-center z-[1]">
+              <button className="cursor-pointer flex items-center justify-center pt-4 px-8 pb-3 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full shadow-md transition-transform transform hover:scale-105 hover:bg-blue-600 active:scale-95 duration-300 ease-in-out">
+                <b className="relative text-xl font-poppins text-white text-center z-1">
                   Start a class today
                 </b>
               </button>
