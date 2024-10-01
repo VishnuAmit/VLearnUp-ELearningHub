@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 
+
 const FrameComponent4 = ({ className = "" }) => {
   return (
     <section
@@ -25,7 +26,7 @@ const FrameComponent4 = ({ className = "" }) => {
                   Join for free
                 </div>
               </button>
-              <div className="flex flex-col items-start justify-start pt-[22px] px-0 pb-0">
+              <div className="flex flex-col items-start justify-start pt-8 pb-6 px-4">
                 <b className="relative z-[1] mq450:text-lgi">
                   Watch how it works
                 </b>
