@@ -5,12 +5,16 @@ from langchain_community.document_loaders import PyPDFLoader
 import os
 import tempfile
 from flask_cors import CORS
+from dotenv import load_dotenv  # Import the dotenv library
+
+# Load environment variables from .env file
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
 
 # Configure the Google Generative AI API
-genai.configure(api_key="AIzaSyDfWCutYJcWGNZTuMdwlmZhA0iriqwsDJk")
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 # Function to extract text from a PDF
 def extract_text_from_pdf(pdf_path):

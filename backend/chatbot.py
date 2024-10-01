@@ -52,12 +52,18 @@
 from flask import Flask, request, jsonify
 import google.generativeai as genai
 from google.generativeai.types import HarmCategory, HarmBlockThreshold
+from dotenv import load_dotenv  # Import the dotenv library
+import os
+
 
 app = Flask(__name__)
 
 # Configure the Google Generative AI API
-API_KEY = "AIzaSyDfWCutYJcWGNZTuMdwlmZhA0iriqwsDJk"
-genai.configure(api_key=API_KEY)
+# Load environment variables from .env file
+load_dotenv()
+
+# Use the API key from environment variables
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 # Initialize Session State for Chat History
 chat_history = []
