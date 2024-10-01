@@ -43,7 +43,7 @@ const LatestUpdates = ({ className = "" }) => {
                   classroom tools, has just secured $20 million in Series B
                   funding to enhance interactive learning experiences...
                 </b>
-                <b className="relative [text-decoration:underline] tracking-[0.02em] leading-[180%] inline-block min-w-[116px] z-[1] mt-[-28px] mq450:text-base mq450:leading-[29px]">
+                <b className="absolute top-[70px] relative [text-decoration:underline] tracking-[0.02em] leading-[180%] inline-block min-w-[116px] z-[1] mt-[-28px] mq450:text-base mq450:leading-[29px]">
                   Read more
                 </b>
               </div>
