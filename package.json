@@ -21,6 +21,7 @@
     "axios": "^1.7.5",
     "bootstrap": "^5.3.3",
     "firebase": "^10.12.4",
+    "genai": "^0.0.18",
     "mdb-react-ui-kit": "^8.0.0",
     "os-browserify": "^0.3.0",
     "path-browserify": "^1.0.1",

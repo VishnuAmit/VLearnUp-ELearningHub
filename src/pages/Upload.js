@@ -129,14 +129,14 @@
 
 // export default UploadPage;
 
-
 import React, { useState } from "react";
 import { css } from "@emotion/css";
 
 const UploadPage = () => {
     const [examFile, setExamFile] = useState(null);
     const [notesFile, setNotesFile] = useState(null);
-    const [comparisonResult, setComparisonResult] = useState("");
+    const [comparisonResult, setComparisonResult] = useState([]);
+    const [showResult, setShowResult] = useState(false);
 
     const handleFileChange = (event, setFile) => {
         const file = event.target.files[0];
@@ -157,10 +157,14 @@ const UploadPage = () => {
                     body: formData
                 });
                 const data = await response.json();
-                setComparisonResult(data.missingParts);
+                setComparisonResult(data.missingParts); // Set result as an array of points
+                setShowResult(true); // Show result overlay
+                setExamFile(null); // Remove uploaded files
+                setNotesFile(null);
             } catch (error) {
                 console.error('Error comparing documents:', error);
                 setComparisonResult(['Error comparing documents.']);
+                setShowResult(true);
             }
         }
     };
@@ -170,7 +174,7 @@ const UploadPage = () => {
         border-radius: 16px;
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         padding: 30px;
-        max-width: 600px;
+        max-width: 450px;
         text-align: center;
         color: white;
         font-family: "Poppins", sans-serif;
@@ -229,36 +233,53 @@ const UploadPage = () => {
         color: #fff;
     `;
 
-    const resultContainerStyle = css`
+    const resultOverlayStyle = css`
+        position: fixed;
+        top: 0;
+        left: 0;
         width: 100%;
-        margin-top: 30px;
-        background-color: #3a3f44;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 20px;
-        border-radius: 8px;
-        color: #f8f8f8;
-        text-align: left;
+        box-sizing: border-box;
+        overflow: auto;
+        z-index: 1000;
     `;
 
-    const resultItemStyle = css`
-        margin: 10px 0;
-        padding: 10px;
-        border-radius: 4px;
-        background-color: #2b2e31;
-        border-left: 5px solid #4a90e2;
+    const resultContainerStyle = css`
+        background-color: #fff;
+        color: #000;
+        border-radius: 8px;
+        padding: 20px;
+        max-width: 90%;
+        max-height: 80%;
+        overflow-y: auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-align: left;
+        font-size: 1em;
+    `;
+
+    const listStyle = css`
+        list-style-type: disc;
+        padding-left: 20px;
+        color: #000;
     `;
 
     return (
         <div
             className={css`
                 display: flex;
-                flex-direction: column;
+                justify-content: center;
                 align-items: center;
                 height: 100%;
                 background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
                 margin: 0;
             `}
         >
-            {!comparisonResult.length ? (
+            {!showResult && (
                 <div className={containerStyle}>
                     <h1 className={headingStyle}>
                         Let's make your learning path more Personalized!
@@ -302,18 +323,22 @@ const UploadPage = () => {
                         Compare Documents
                     </button>
                 </div>
-            ) : (
-                <div className={resultContainerStyle}>
-                    {comparisonResult.map((item, index) => (
-                        <div key={index} className={resultItemStyle}>
-                            {item}
-                        </div>
-                    ))}
+            )}
+
+            {showResult && (
+                <div className={resultOverlayStyle}>
+                    <div className={resultContainerStyle}>
+                        <ul className={listStyle}>
+                            {comparisonResult.map((item, index) => (
+                                <li key={index}>{item}</li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
             )}
         </div>
     );
 };
 
-export default UploadPage;
+export default UploadPage;
 
