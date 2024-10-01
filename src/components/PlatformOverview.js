@@ -36,40 +36,40 @@ const PlatformOverview = ({ className = "" }) => {
               FOR INSTRUCTORS
             </h3>
             <div className="flex flex-row items-start justify-end py-0 pr-1 pl-[5px]">
-            <button className="cursor-pointer flex items-center justify-center py-4 px-8 bg-gradient-to-r from-blue-400 to-blue-600 rounded-2xl shadow-lg transition-transform transform hover:scale-105 duration-200">
-              <b className="relative text-3xl font-poppins text-white text-center z-[1]">
-              Start a class today
-              </b>
-            </button>
+              <button className="cursor-pointer flex items-center justify-center py-4 px-8 bg-gradient-to-r from-blue-400 to-blue-600 rounded-2xl shadow-lg transition-transform transform hover:scale-105 duration-200">
+                <b className="relative text-3xl font-poppins text-white text-center z-[1]">
+                  Start a class today
+                </b>
+              </button>
             </div>
           </div>
           <div className="w-[600px] flex flex-col items-start justify-end pt-0 px-0 pb-0.5 box-border min-w-[600px] max-w-full mq850:min-w-full mq1225:flex-1">
-  <div className="self-stretch flex flex-col items-center justify-start pt-[132px] pb-[126px] pr-5 pl-[21px] relative gap-[17px] mq450:pt-[86px] mq450:pb-[82px] mq450:box-border hover:shadow-2xl hover:bg-opacity-60 transition-all duration-300 ease-in-out bg-white rounded-lg">
-    <div className="w-full h-full absolute top-0 right-0 bottom-0 left-0">
-      <div className="absolute h-full w-full top-0 right-0 bottom-3 left-0 rounded-xl bg-gradient-to-r from-gray-200 to-gray-300 shadow-md" />
-      <img
-        className="absolute h-full w-full top-0 right-0 bottom-0 left-0 object-cover rounded-xl z-1"
-        loading="lazy"
-        alt="Vector illustration"
-        src="/vector.svg"
-      />
-    </div>
-    
-    <div className="flex flex-row items-start justify-start py-0 pr-[26px] pl-[25px]">
-    <h3 className="m-0 relative font-semibold text-4xl text-midnightblue text-center transition-transform duration-300 ease-in-out hover:scale-105 hover:text-blue-600 z-2">
-  FOR STUDENTS
-</h3>
+            <div className="self-stretch flex flex-col items-center justify-start pt-[132px] pb-[126px] pr-5 pl-[21px] relative gap-[17px] mq450:pt-[86px] mq450:pb-[82px] mq450:box-border hover:shadow-2xl hover:bg-opacity-60 transition-all duration-300 ease-in-out bg-white rounded-lg">
+              <div className="w-full h-full absolute top-0 right-0 bottom-0 left-0">
+                <div className="absolute h-full w-full top-0 right-0 bottom-3 left-0 rounded-xl bg-gradient-to-r from-gray-200 to-gray-300 shadow-md" />
+                <img
+                  className="absolute h-full w-full top-0 right-0 bottom-0 left-0 object-cover rounded-xl z-1"
+                  loading="lazy"
+                  alt="Vector illustration"
+                  src="/vector.svg"
+                />
+              </div>
 
-    </div>
+              <div className="flex flex-row items-start justify-start py-0 pr-[26px] pl-[25px]">
+                <h3 className="m-0 relative font-semibold text-4xl text-midnightblue text-center transition-transform duration-300 ease-in-out hover:scale-105 hover:text-blue-600 z-2">
+                  FOR STUDENTS
+                </h3>
 
-    <button className="cursor-pointer flex items-center justify-center pt-4 px-8 pb-3 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full shadow-md transition-transform transform hover:scale-105 hover:bg-blue-600 active:scale-95 duration-300 ease-in-out">
-  <b className="relative text-xl font-poppins text-white text-center z-1">
-    Enter Access Code
-  </b>
-</button>
+              </div>
 
-  </div>
-</div>
+              <button className="cursor-pointer flex items-center justify-center pt-4 px-8 pb-3 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full shadow-md transition-transform transform hover:scale-105 hover:bg-blue-600 active:scale-95 duration-300 ease-in-out">
+                <b className="relative text-xl font-poppins text-white text-center z-1">
+                  Enter Access Code
+                </b>
+              </button>
+
+            </div>
+          </div>
 
         </div>
       </div>
