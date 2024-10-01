@@ -26,7 +26,7 @@ const PlatformOverview = ({ className = "" }) => {
           </div>
         </div>
         <div className="self-stretch flex flex-row items-end justify-center gap-[88px] max-w-full text-13xl text-white mq450:gap-[22px] mq850:gap-[44px] mq1225:flex-wrap">
-          <div className="flex-1 flex flex-col items-center justify-start pt-[135px] pb-32 pr-8 pl-5 box-border gap-[17px] bg-[url('/public/image-23@2x.png')] bg-cover bg-no-repeat bg-[top] min-w-[398px] max-w-full mq450:pt-[88px] mq450:pb-[83px] mq450:box-border mq850:min-w-full">
+          <div className="flex-1 flex flex-col items-center justify-start pt-[135px] pb-32 pr-8 pl-5 box-border gap-[17px] bg-[url('/public/image-23@2x.png')] bg-cover bg-no-repeat bg-[top] min-w-[398px] max-w-full mq450:pt-[88px] mq450:pb-[83px] mq450:box-border mq850:min-w-full hover:shadow-lg hover:bg-opacity-50 transition-all duration-300 ease-in-out">
             <img
               className="w-[612px] h-[408px] relative object-cover hidden max-w-full"
               alt=""
@@ -36,7 +36,7 @@ const PlatformOverview = ({ className = "" }) => {
               FOR INSTRUCTORS
             </h3>
             <div className="flex flex-row items-start justify-end py-0 pr-1 pl-[5px]">
-              <button className="cursor-pointer pt-[22px] px-9 pb-[21px] bg-[transparent] rounded-61xl flex flex-row items-start justify-start whitespace-nowrap z-[1] border-[1px] border-solid border-white hover:bg-gainsboro-400 hover:box-border hover:border-[1px] hover:border-solid hover:border-gainsboro-100">
+              <button className="cursor-pointer pt-[22px] px-9 pb-[21px] bg-[transparent] rounded-61xl flex flex-row items-start justify-start whitespace-nowrap z-[1] border-[1px] border-solid border-white hover:bg-gainsboro-400 hover:box-border hover:border-[1px] hover:border-solid hover:border-gainsboro-100 transition-colors duration-200">
                 <div className="h-20 w-[283px] relative rounded-61xl box-border hidden border-[1px] border-solid border-white" />
                 <b className="relative text-3xl font-poppins text-white text-center z-[1]">
                   Start a class today
@@ -45,7 +45,7 @@ const PlatformOverview = ({ className = "" }) => {
             </div>
           </div>
           <div className="w-[600px] flex flex-col items-start justify-end pt-0 px-0 pb-0.5 box-border min-w-[600px] max-w-full mq850:min-w-full mq1225:flex-1">
-            <div className="self-stretch flex flex-col items-center justify-start pt-[132px] pb-[126px] pr-5 pl-[21px] relative gap-[17px] mq450:pt-[86px] mq450:pb-[82px] mq450:box-border">
+            <div className="self-stretch flex flex-col items-center justify-start pt-[132px] pb-[126px] pr-5 pl-[21px] relative gap-[17px] mq450:pt-[86px] mq450:pb-[82px] mq450:box-border hover:shadow-lg hover:bg-opacity-50 transition-all duration-300 ease-in-out">
               <div className="w-full h-full absolute !m-[0] top-[0px] right-[0px] bottom-[0px] left-[0px]">
                 <div className="absolute h-full w-full top-[0px] right-[0px] bottom-[3px] left-[0px] rounded-xl bg-silver">
                   <div className="absolute top-[0px] left-[0px] rounded-xl bg-silver w-full h-full hidden" />
@@ -62,7 +62,7 @@ const PlatformOverview = ({ className = "" }) => {
                   FOR STUDENTS
                 </h3>
               </div>
-              <button className="cursor-pointer [border:none] pt-6 px-[39px] pb-[23px] bg-midnightblue rounded-61xl flex flex-row items-start justify-start whitespace-nowrap z-[2] hover:bg-darkslateblue-400">
+              <button className="cursor-pointer [border:none] pt-6 px-[39px] pb-[23px] bg-midnightblue rounded-61xl flex flex-row items-start justify-start whitespace-nowrap z-[2] hover:bg-darkslateblue-400 transition-colors duration-200">
                 <div className="h-20 w-[283px] relative rounded-61xl bg-midnightblue hidden" />
                 <b className="relative text-3xl font-poppins text-white text-center z-[1]">
                   Enter access code
