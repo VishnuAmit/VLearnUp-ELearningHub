@@ -69,10 +69,10 @@ const Footer = ({ className = "" }) => {
                 <div className="h-[25px] flex flex-col items-start justify-start pt-2 px-0 pb-0 box-border">
                   <div className="w-px h-[18px] relative box-border z-[1] border-r-[1px] border-solid border-slategray-200" />
                 </div>
-                <b className="relative tracking-[0.04em] z-[1] mq450:text-lg">{`Terms & Conditions`}</b>
+                <b className="relative tracking-[0.04em] z-[1] mq450:text-lg">{"Terms & Conditions"}</b>
               </div>
             </div>
-            <b className="relative tracking-[0.04em] inline-block max-w-full z-[1] mq450:text-lg">{`© 2024 E-Class learning Inc. `}</b>
+            <b className="relative tracking-[0.04em] inline-block max-w-full z-[1] mq450:text-lg">{"© 2024 E-Class learning Inc. "}</b>
           </div>
         </div>
       </div>

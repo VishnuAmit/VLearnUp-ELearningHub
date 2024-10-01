@@ -390,7 +390,7 @@ const Dashboard = () => {
                               className={css`
                                 margin: 0;
                               `}
-                            >{`Product `}</p>
+                            >{"Product "}</p>
                             <p
                               className={css`
                                 margin: 0;
@@ -1252,7 +1252,7 @@ const Dashboard = () => {
                         min-width: 26px;
                         z-index: 2;
                       `}
-                    >{`4.8 `}</div>
+                    >{"4.8 "}</div>
                   </div>
                   <div
                     className={css`
@@ -1293,7 +1293,7 @@ const Dashboard = () => {
                         min-width: 27px;
                         z-index: 2;
                       `}
-                    >{`4.6 `}</div>
+                    >{"4.6 "}</div>
                   </div>
                   <div
                     className={css`
@@ -1343,7 +1343,7 @@ const Dashboard = () => {
                           min-width: 26px;
                           z-index: 2;
                         `}
-                      >{`4.5 `}</div>
+                      >{"4.5 "}</div>
                     </div>
                     <div
                       className={css`
@@ -1383,7 +1383,7 @@ const Dashboard = () => {
                           min-width: 26px;
                           z-index: 2;
                         `}
-                      >{`4.8 `}</div>
+                      >{"4.8 "}</div>
                     </div>
                   </div>
                 </div>
@@ -1430,7 +1430,7 @@ const Dashboard = () => {
                           font-size: 16px;
                         }
                       `}
-                    >{`View all `}</div>
+                    >{"View all "}</div>
                     <div
                       className={css`
                         display: flex;

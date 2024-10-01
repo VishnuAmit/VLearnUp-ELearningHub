@@ -1,6 +1,6 @@
 import { css } from "@emotion/css";
-import FrameComponent6 from "./FrameComponent6";
 import PropTypes from "prop-types";
+import FrameComponent6 from "./FrameComponent6";
 
 const ProfileCard = ({ className = "" }) => {
   return (
@@ -372,7 +372,7 @@ const ProfileCard = ({ className = "" }) => {
                   className={css`
                     margin: 0;
                   `}
-                >{`Upgrade `}</p>
+                >{"Upgrade "}</p>
                 <p
                   className={css`
                     margin: 0;

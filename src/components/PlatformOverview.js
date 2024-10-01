@@ -11,7 +11,7 @@ const PlatformOverview = ({ className = "" }) => {
             <div className="w-[1077px] flex flex-row items-start justify-center py-0 px-5 box-border max-w-full">
               <h1 className="m-0 w-[429px] relative text-inherit leading-[180%] font-semibold font-inherit inline-block max-w-full mq450:text-7xl mq450:leading-[48px] mq850:text-16xl mq850:leading-[63px]">
                 <span>What is</span>
-                <span className="text-darkslateblue-300">{` `}</span>
+                <span className="text-darkslateblue-300">{" "}</span>
                 <span className="text-orange">VLearnUp?</span>
                 <span className="text-turquoise"></span>
               </h1>

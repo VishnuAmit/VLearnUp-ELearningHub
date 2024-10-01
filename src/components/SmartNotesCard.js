@@ -12,7 +12,7 @@ const SmartNotesCard = ({ className = "" }) => {
               <div className="self-stretch flex flex-col items-start justify-start gap-[84px] max-w-full mq450:gap-[21px] mq850:gap-[42px]">
                 <h2 className="m-0 w-[393px] relative text-inherit leading-[160%] font-bold font-inherit inline-block max-w-full mq450:text-5xl mq450:leading-[38px] mq850:text-13xl mq850:leading-[51px]">
                   <span>Smart Notes</span>
-                  <span className="text-darkslateblue-300">{` &`}</span>
+                  <span className="text-darkslateblue-300">{" &"}</span>
                   <span className="text-orange"> OCR</span>
                 </h2>
                 <b className="self-stretch relative text-3xl tracking-[0.02em] leading-[180%] font-poppins text-slategray-100 mq450:text-lg mq450:leading-[32px]">
@@ -123,7 +123,7 @@ const SmartNotesCard = ({ className = "" }) => {
               <div className="self-stretch flex flex-col items-start justify-start gap-[20px] max-w-full">
                 <h2 className="m-0 w-[347px] relative text-inherit leading-[160%] font-bold font-inherit inline-block max-w-full mq450:text-5xl mq450:leading-[38px] mq850:text-13xl mq850:leading-[51px]">
                   <span>Gamified Learning</span>
-                  <span className="text-darkslateblue-300">{` `}</span>
+                  <span className="text-darkslateblue-300">{" "}</span>
                   <span className="text-orange">Experience</span>
                 </h2>
                 <b className="self-stretch relative text-3xl tracking-[0.02em] leading-[180%] font-poppins text-slategray-100 mq450:text-lg mq450:leading-[32px]">

@@ -116,7 +116,7 @@ const MainHeader = ({ className = "" }) => {
                 </a>
                 <div className="flex flex-col items-start justify-start py-0 pr-[23px] pl-0">
                   <div className="flex flex-row items-start justify-start relative">
-                    <a className="[text-decoration:none] relative tracking-[0.02em] font-bold text-[inherit] inline-block min-w-[97px] whitespace-nowrap z-[1]">{`Courses `}</a>
+                    <a className="[text-decoration:none] relative tracking-[0.02em] font-bold text-[inherit] inline-block min-w-[97px] whitespace-nowrap z-[1]">{"Courses "}</a>
                     <img
                       className="h-6 w-6 absolute !m-[0] right-[-21px] bottom-[4.2px] overflow-hidden shrink-0 z-[2]"
                       alt=""

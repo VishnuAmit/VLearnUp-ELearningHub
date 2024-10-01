@@ -1,6 +1,6 @@
+import PropTypes from "prop-types";
 import GroupComponent2 from "./GroupComponent2";
 import GroupComponent1 from "./GroupComponent1";
-import PropTypes from "prop-types";
 
 const DiscussionScreenshot = ({ className = "" }) => {
   return (
@@ -63,7 +63,7 @@ const DiscussionScreenshot = ({ className = "" }) => {
       <div className="flex flex-col items-start justify-start gap-[84px] min-w-[722px] max-w-full text-21xl text-navy mq450:gap-[21px] mq850:gap-[42px] mq850:min-w-full mq1500:flex-1">
         <h2 className="m-0 relative text-inherit leading-[160%] font-bold font-inherit mq450:text-5xl mq450:leading-[38px] mq850:text-13xl mq850:leading-[51px]">
           <span>Enhanced Communication</span>
-          <span className="text-darkslateblue-300">{` `}</span>
+          <span className="text-darkslateblue-300">{" "}</span>
           <span className="text-orange">and Support</span>
         </h2>
         <b className="w-[540px] relative text-3xl tracking-[0.02em] leading-[180%] inline-block font-poppins text-slategray-100 max-w-full mq450:text-lg mq450:leading-[32px]">
