@@ -36,12 +36,11 @@ const PlatformOverview = ({ className = "" }) => {
               FOR INSTRUCTORS
             </h3>
             <div className="flex flex-row items-start justify-end py-0 pr-1 pl-[5px]">
-              <button className="cursor-pointer pt-[22px] px-9 pb-[21px] bg-[transparent] rounded-61xl flex flex-row items-start justify-start whitespace-nowrap z-[1] border-[1px] border-solid border-white hover:bg-gainsboro-400 hover:box-border hover:border-[1px] hover:border-solid hover:border-gainsboro-100 transition-colors duration-200">
-                <div className="h-20 w-[283px] relative rounded-61xl box-border hidden border-[1px] border-solid border-white" />
-                <b className="relative text-3xl font-poppins text-white text-center z-[1]">
-                  Start a class today
-                </b>
-              </button>
+            <button className="cursor-pointer flex items-center justify-center py-4 px-8 bg-gradient-to-r from-blue-400 to-blue-600 rounded-2xl shadow-lg transition-transform transform hover:scale-105 duration-200">
+              <b className="relative text-3xl font-poppins text-white text-center z-[1]">
+              Start a class today
+              </b>
+            </button>
             </div>
           </div>
           <div className="w-[600px] flex flex-col items-start justify-end pt-0 px-0 pb-0.5 box-border min-w-[600px] max-w-full mq850:min-w-full mq1225:flex-1">
