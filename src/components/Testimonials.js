@@ -99,7 +99,7 @@ const Testimonials = ({ className = "" }) => {
   “I love how VLearnUp combines personalized learning with the feel of offline classes. It’s truly a game-changer for online education.”
 </blockquote>
 
-                    <div className="self-stretch relative flex flex-col items-start justify-center h-[100px] p-4 bg-white rounded-lg shadow-lg">
+                    <div className="self-stretch relative flex flex-col items-start justify-center h-[60px] p-4 bg-white rounded-lg shadow-lg">
                       <div className="flex flex-row items-center justify-start gap-1 mb-2">
                         <img
                           className="h-6 w-6 "
