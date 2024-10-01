@@ -15,8 +15,8 @@ const Testimonials = ({ className = "" }) => {
     </b>
   </div>
   
-  <div className="absolute top-[59px] left-[0px] w-[612px] flex flex-col items-start justify-start gap-[22px] max-w-full text-41xl text-darkslateblue-300">
-    <h1 className="m-0 relative text-inherit font-bold font-inherit inline-block max-w-full mq450:text-17xl mq850:text-29xl">
+  <div className="absolute top-[59px] left-[25px] w-[612px] flex flex-col items-start justify-start gap-[25px] max-w-full text-41xl text-darkslateblue-300">
+    <h1 className="m-0 relative text-inherit font-bold font-inherit inline-block max-w-full mq450:text-20xl mq850:text-29xl">
       What They Say?
     </h1>
     <div className="self-stretch flex flex-row items-start justify-start py-0 pr-0 pl-[5px] box-border max-w-full text-7xl text-slategray-100 font-poppins">
@@ -26,7 +26,7 @@ const Testimonials = ({ className = "" }) => {
     </div>
   </div>
   
-  <div className="absolute top-[288px] left-0 w-full flex flex-row items-start justify-between max-w-full gap-6 text-2xl text-slategray-100 font-poppins mq1500:flex-wrap">
+  <div className="absolute top-[288px] left-[25px] w-full flex flex-row items-start justify-between max-w-full gap-6 text-7xl text-slategray-100 font-poppins mq1500:flex-wrap">
     <div className="w-[661px] flex flex-col items-start justify-start pt-6 px-0 box-border min-w-[661px] max-w-full mq850:min-w-full mq1500:flex-1">
       <div className="self-stretch flex flex-col items-start justify-start gap-8 max-w-full mq850:gap-6">
         <div className="self-stretch flex flex-row items-start justify-start py-0 pr-0 pl-0.5 box-border max-w-full">
@@ -36,7 +36,7 @@ const Testimonials = ({ className = "" }) => {
                 We’re committed to providing an exceptional learning experience and would love to hear your feedback.
               </b>
             </div>
-            <b className="relative tracking-[0.02em] leading-[42px] mq450:text-xl mq450:leading-[33px]">
+            <b className="absolute left-[10px] relative tracking-[0.02em] leading-[42px] mq450:text-xl mq450:leading-[33px]">
               Share your thoughts and be part of our journey!
             </b>
           </div>
@@ -74,7 +74,7 @@ const Testimonials = ({ className = "" }) => {
 
       <div className="self-stretch flex flex-row items-start justify-start relative max-w-full">
       <img
-  className="h-[700px] w-[500px] absolute right-0 bottom-0 transform translate-x-[2%] rounded-xl object-cover transition-transform duration-300 hover:scale-105 shadow-lg"
+  className="h-[750px] w-[600px] absolute right-0 bottom-0 transform translate-x-[-6%] rounded-xl object-cover transition-transform duration-300 hover:scale-105 shadow-lg"
   loading="lazy"
   alt="Description of the image"
   src="/image-15@2x.png"
