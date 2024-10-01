@@ -15,7 +15,7 @@ const SmartNotesCard = ({ className = "" }) => {
                   <span className="text-darkslateblue-300">{` &`}</span>
                   <span className="text-orange"> OCR</span>
                 </h2>
-                <b className="self-stretch relative text-3xl tracking-[0.02em] leading-[180%] font-poppins text-slategray-100 mq450:text-lg mq450:leading-[32px]">
+                <b className="self-stretch relative text-3xl tracking-[0.09em] leading-[180%] font-poppins text-slategray-100 mq450:text-lg mq450:leading-[32px]">
                   Upload class resources and handwritten notes and detect
                   missing parts in your notes. Enhance learning with quizzes on
                   your handwritten material.
