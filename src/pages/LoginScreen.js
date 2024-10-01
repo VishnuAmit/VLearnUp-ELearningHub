@@ -1,31 +1,31 @@
-import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../firebase'; // Make sure to import your Firebase configuration
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import * as React from "react";
+import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
+import CssBaseline from "@mui/material/CssBaseline";
+import TextField from "@mui/material/TextField";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
+import Link from "@mui/material/Link";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../firebase"; // Make sure to import your Firebase configuration
 
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
+      {"Copyright © "}
       <Link color="inherit" href="https://mui.com/">
         Your Website
-      </Link>{' '}
+      </Link>{" "}
       {new Date().getFullYear()}
-      {'.'}
+      {"."}
     </Typography>
   );
 }
@@ -34,26 +34,26 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function SignIn() {
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const navigate = useNavigate(); // Use navigate for redirection
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    const email = data.get('email');
-    const password = data.get('password');
+    const email = data.get("email");
+    const password = data.get("password");
 
     try {
       const userAuth = await signInWithEmailAndPassword(auth, email, password);
       // Signed in 
-      console.log('User signed in:', userAuth.user);
-      navigate('/streamfinder'); // Redirect to pathfinder page
+      console.log("User signed in:", userAuth.user);
+      navigate("/streamfinder"); // Redirect to pathfinder page
       // Redirect or perform additional actions after successful sign-in
     } catch (error) {
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.error('Error signing in:', errorMessage);
-      setError('Failed to sign in. Please try again.');
+      console.error("Error signing in:", errorMessage);
+      setError("Failed to sign in. Please try again.");
     }
   };
 
@@ -64,12 +64,12 @@ export default function SignIn() {
         <Box
           sx={{
             marginTop: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">

@@ -1,6 +1,6 @@
+import PropTypes from "prop-types";
 import CoursesGrid from "./CoursesGrid";
 import FrameComponent1 from "./FrameComponent1";
-import PropTypes from "prop-types";
 
 const FrameComponent = ({ className = "" }) => {
   return (

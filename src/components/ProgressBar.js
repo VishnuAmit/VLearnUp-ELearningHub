@@ -1,6 +1,6 @@
-import Label from "./Label";
 import { css } from "@emotion/css";
 import PropTypes from "prop-types";
+import Label from "./Label";
 
 const ProgressBar = ({ className = "" }) => {
   return (

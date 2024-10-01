@@ -137,10 +137,10 @@ import {
 } from "react-router-dom";
 import ELearning from "./pages/ELearning";
 import Streamfindercomp from "./pages/Streamfinder"; // Import the pathfinder page
-import './global.css';
+import "./global.css";
 import Dashboard from "./pages/Dashboard";
 import UploadPage from "./pages/Upload"; // Correct import for the UploadPage
-import '@syncfusion/ej2-react-pdfviewer/styles/material.css';
+import "@syncfusion/ej2-react-pdfviewer/styles/material.css";
 
 function App() {
   const action = useNavigationType();
@@ -158,17 +158,17 @@ function App() {
     let metaDescription = "";
 
     switch (pathname) {
-      case "/":
-        title = "VLearnUp - Personalized Learning";
-        metaDescription = "Personalized learning for your unique journey.";
-        break;
-      case "/streamfinder":
-        title = "VLearnUp - Pathfinder";
-        metaDescription = "Navigate your learning path.";
-        break;
-      default:
-        title = "VLearnUp";
-        metaDescription = "Personalized learning platform.";
+    case "/":
+      title = "VLearnUp - Personalized Learning";
+      metaDescription = "Personalized learning for your unique journey.";
+      break;
+    case "/streamfinder":
+      title = "VLearnUp - Pathfinder";
+      metaDescription = "Navigate your learning path.";
+      break;
+    default:
+      title = "VLearnUp";
+      metaDescription = "Personalized learning platform.";
     }
 
     if (title) {
@@ -177,7 +177,7 @@ function App() {
 
     if (metaDescription) {
       const metaDescriptionTag = document.querySelector(
-        'head > meta[name="description"]'
+        "head > meta[name=\"description\"]"
       );
       if (metaDescriptionTag) {
         metaDescriptionTag.content = metaDescription;

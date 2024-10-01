@@ -11,7 +11,7 @@ const LearningPaths = ({ className = "" }) => {
           <div className="self-stretch flex flex-row items-start justify-end py-0 pr-4 pl-[18px]">
             <h3 className="m-0 flex-1 relative text-inherit font-bold font-inherit z-[1] mq450:text-lg mq850:text-5xl">
               <p className="m-0">Personalized Learning</p>
-              <p className="m-0">{`Paths `}</p>
+              <p className="m-0">{"Paths "}</p>
             </h3>
           </div>
           <b className="self-stretch relative text-xl leading-[180%] text-slategray-100 z-[1] mq450:text-base mq450:leading-[29px]">
@@ -22,7 +22,7 @@ const LearningPaths = ({ className = "" }) => {
         <div className="flex-1 shadow-[0px_10px_60px_rgba(38,_45,_118,_0.08)] rounded-xl bg-white flex flex-col items-end justify-start pt-[122px] pb-[50px] pr-[37px] pl-9 box-border relative gap-[24px] min-w-[337px] max-w-full mq450:pt-[79px] mq450:pb-8 mq450:box-border mq450:min-w-full">
           <div className="w-[450px] h-[430px] relative shadow-[0px_10px_60px_rgba(38,_45,_118,_0.08)] rounded-xl bg-white hidden max-w-full z-[0]" />
           <div className="self-stretch flex flex-row items-start justify-end py-0 pr-[13px] pl-[21px] box-border max-w-full">
-            <h3 className="m-0 flex-1 relative text-inherit font-bold font-inherit inline-block max-w-full z-[1] mq450:text-lg mq850:text-5xl">{`Virtual Classrooms & Collaboration`}</h3>
+            <h3 className="m-0 flex-1 relative text-inherit font-bold font-inherit inline-block max-w-full z-[1] mq450:text-lg mq850:text-5xl">{"Virtual Classrooms & Collaboration"}</h3>
           </div>
           <b className="self-stretch relative text-xl leading-[180%] text-slategray-100 z-[1] mq450:text-base mq450:leading-[29px]">
             Participate in live video sessions, join discussion forums, and
@@ -68,7 +68,7 @@ const LearningPaths = ({ className = "" }) => {
         <div className="flex-1 shadow-[0px_10px_60px_rgba(38,_45,_118,_0.08)] rounded-xl bg-white flex flex-col items-end justify-start pt-[122px] pb-[50px] pr-[37px] pl-9 box-border gap-[24px] min-w-[337px] max-w-full mq450:pt-[79px] mq450:pb-8 mq450:box-border mq450:min-w-full">
           <div className="w-[450px] h-[430px] relative shadow-[0px_10px_60px_rgba(38,_45,_118,_0.08)] rounded-xl bg-white hidden max-w-full" />
           <div className="self-stretch flex flex-row items-start justify-end py-0 pr-[17px] pl-[18px] box-border max-w-full">
-            <b className="flex-1 relative inline-block max-w-full z-[1] mq450:text-lg mq850:text-5xl">{`Real-Time Feedback & Assessments`}</b>
+            <b className="flex-1 relative inline-block max-w-full z-[1] mq450:text-lg mq850:text-5xl">{"Real-Time Feedback & Assessments"}</b>
           </div>
           <b className="self-stretch relative text-xl leading-[180%] text-slategray-100 z-[1] mq450:text-base mq450:leading-[29px]">
             Instant feedback on assignments with AI-powered automated grading

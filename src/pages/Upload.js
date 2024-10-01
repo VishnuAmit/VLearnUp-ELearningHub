@@ -134,38 +134,38 @@ import React, { useState } from "react";
 import { css } from "@emotion/css";
 
 const UploadPage = () => {
-    const [examFile, setExamFile] = useState(null);
-    const [notesFile, setNotesFile] = useState(null);
-    const [comparisonResult, setComparisonResult] = useState("");
+  const [examFile, setExamFile] = useState(null);
+  const [notesFile, setNotesFile] = useState(null);
+  const [comparisonResult, setComparisonResult] = useState("");
 
-    const handleFileChange = (event, setFile) => {
-        const file = event.target.files[0];
-        if (file) {
-            setFile(file);
-        }
-    };
+  const handleFileChange = (event, setFile) => {
+    const file = event.target.files[0];
+    if (file) {
+      setFile(file);
+    }
+  };
 
-    const compareDocuments = async () => {
-        if (examFile && notesFile) {
-            const formData = new FormData();
-            formData.append('pdf1', examFile);
-            formData.append('pdf2', notesFile);
+  const compareDocuments = async () => {
+    if (examFile && notesFile) {
+      const formData = new FormData();
+      formData.append("pdf1", examFile);
+      formData.append("pdf2", notesFile);
 
-            try {
-                const response = await fetch('http://localhost:5000/compare-pdfs', {
-                    method: 'POST',
-                    body: formData
-                });
-                const data = await response.json();
-                setComparisonResult(data.missingParts);
-            } catch (error) {
-                console.error('Error comparing documents:', error);
-                setComparisonResult(['Error comparing documents.']);
-            }
-        }
-    };
+      try {
+        const response = await fetch("http://localhost:5000/compare-pdfs", {
+          method: "POST",
+          body: formData
+        });
+        const data = await response.json();
+        setComparisonResult(data.missingParts);
+      } catch (error) {
+        console.error("Error comparing documents:", error);
+        setComparisonResult(["Error comparing documents."]);
+      }
+    }
+  };
 
-    const containerStyle = css`
+  const containerStyle = css`
         background-color: #1e2a38;
         border-radius: 16px;
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
@@ -178,13 +178,13 @@ const UploadPage = () => {
         margin-top: 100px;
     `;
 
-    const headingStyle = css`
+  const headingStyle = css`
         font-size: 1.8em;
         margin-bottom: 25px;
         font-weight: 700;
     `;
 
-    const fileUploadStyle = css`
+  const fileUploadStyle = css`
         border: 3px dashed #4a90e2;
         border-radius: 12px;
         padding: 30px;
@@ -197,7 +197,7 @@ const UploadPage = () => {
         }
     `;
 
-    const labelStyle = css`
+  const labelStyle = css`
         display: block;
         font-size: 1.1em;
         color: #4a90e2;
@@ -208,7 +208,7 @@ const UploadPage = () => {
         }
     `;
 
-    const buttonStyle = css`
+  const buttonStyle = css`
         background-color: #4a90e2;
         border: none;
         padding: 14px 30px;
@@ -223,13 +223,13 @@ const UploadPage = () => {
         }
     `;
 
-    const fileDisplayStyle = css`
+  const fileDisplayStyle = css`
         margin-top: 10px;
         font-size: 1em;
         color: #fff;
     `;
 
-    const resultContainerStyle = css`
+  const resultContainerStyle = css`
         width: 100%;
         margin-top: 30px;
         background-color: #3a3f44;
@@ -239,7 +239,7 @@ const UploadPage = () => {
         text-align: left;
     `;
 
-    const resultItemStyle = css`
+  const resultItemStyle = css`
         margin: 10px 0;
         padding: 10px;
         border-radius: 4px;
@@ -247,9 +247,9 @@ const UploadPage = () => {
         border-left: 5px solid #4a90e2;
     `;
 
-    return (
-        <div
-            className={css`
+  return (
+    <div
+      className={css`
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -257,62 +257,62 @@ const UploadPage = () => {
                 background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
                 margin: 0;
             `}
-        >
-            {!comparisonResult.length ? (
-                <div className={containerStyle}>
-                    <h1 className={headingStyle}>
+    >
+      {!comparisonResult.length ? (
+        <div className={containerStyle}>
+          <h1 className={headingStyle}>
                         Let's make your learning path more Personalized!
-                    </h1>
+          </h1>
 
-                    <div className={fileUploadStyle}>
-                        <input
-                            type="file"
-                            id="examResource"
-                            style={{ display: "none" }}
-                            onChange={(e) => handleFileChange(e, setExamFile)}
-                        />
-                        {!examFile && (
-                            <label htmlFor="examResource" className={labelStyle}>
+          <div className={fileUploadStyle}>
+            <input
+              type="file"
+              id="examResource"
+              style={{ display: "none" }}
+              onChange={(e) => handleFileChange(e, setExamFile)}
+            />
+            {!examFile && (
+              <label htmlFor="examResource" className={labelStyle}>
                                 Select Exam's Resource
-                            </label>
-                        )}
-                        {examFile && (
-                            <div className={fileDisplayStyle}>{examFile.name}</div>
-                        )}
-                    </div>
-
-                    <div className={fileUploadStyle}>
-                        <input
-                            type="file"
-                            id="yourNotes"
-                            style={{ display: "none" }}
-                            onChange={(e) => handleFileChange(e, setNotesFile)}
-                        />
-                        {!notesFile && (
-                            <label htmlFor="yourNotes" className={labelStyle}>
-                                Select Your Notes
-                            </label>
-                        )}
-                        {notesFile && (
-                            <div className={fileDisplayStyle}>{notesFile.name}</div>
-                        )}
-                    </div>
-
-                    <button className={buttonStyle} onClick={compareDocuments}>
-                        Compare Documents
-                    </button>
-                </div>
-            ) : (
-                <div className={resultContainerStyle}>
-                    {comparisonResult.map((item, index) => (
-                        <div key={index} className={resultItemStyle}>
-                            {item}
-                        </div>
-                    ))}
-                </div>
+              </label>
             )}
+            {examFile && (
+              <div className={fileDisplayStyle}>{examFile.name}</div>
+            )}
+          </div>
+
+          <div className={fileUploadStyle}>
+            <input
+              type="file"
+              id="yourNotes"
+              style={{ display: "none" }}
+              onChange={(e) => handleFileChange(e, setNotesFile)}
+            />
+            {!notesFile && (
+              <label htmlFor="yourNotes" className={labelStyle}>
+                                Select Your Notes
+              </label>
+            )}
+            {notesFile && (
+              <div className={fileDisplayStyle}>{notesFile.name}</div>
+            )}
+          </div>
+
+          <button className={buttonStyle} onClick={compareDocuments}>
+                        Compare Documents
+          </button>
         </div>
-    );
+      ) : (
+        <div className={resultContainerStyle}>
+          {comparisonResult.map((item, index) => (
+            <div key={index} className={resultItemStyle}>
+              {item}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default UploadPage;

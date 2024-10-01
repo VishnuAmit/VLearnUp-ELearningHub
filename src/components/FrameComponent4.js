@@ -8,7 +8,7 @@ const FrameComponent4 = ({ className = "" }) => {
       <div className="flex-1 flex flex-row items-start justify-center gap-[62px] max-w-full mq450:gap-[15px] mq850:gap-[31px] mq1500:flex-wrap">
         <div className="w-[681px] flex flex-col items-start justify-start gap-[34px] min-w-[681px] max-w-full mq850:gap-[17px] mq1225:min-w-full mq1500:flex-1">
           <h1 className="m-0 self-stretch relative text-inherit font-bold font-inherit z-[1] mq450:text-13xl mq850:text-24xl">
-            <span>{`Personalized `}</span>
+            <span>{"Personalized "}</span>
             <span className="text-white">
               learning for your unique journey.
             </span>
