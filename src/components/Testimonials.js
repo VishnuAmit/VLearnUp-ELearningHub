@@ -92,44 +92,48 @@ const Testimonials = ({ className = "" }) => {
 
                 <div className="flex-1 flex flex-col items-start justify-start pt-10 px-0 pb-0 box-border min-w-[383px] max-w-full mq850:min-w-full">
                   <div className="self-stretch flex flex-col items-start justify-start gap-12 max-w-full mq450:gap-4 mq850:gap-8">
-                    <blockquote className="m-0 w-full relative tracking-[0.02em] leading-[180%] font-bold inline-block max-w-full z-2 mq450:text-lg mq450:leading-[32px]">
-                      “I love how VLearnUp combines personalized learning with the feel of offline classes. It’s truly a game-changer for online education.”
-                    </blockquote>
-                    <div className="self-stretch h-[68px] relative text-5xl">
-                      <div className="absolute top-0 left-[414px] flex flex-row items-start justify-start gap-1.5">
+                  <blockquote className="m-0 w-full relative tracking-[0.02em] leading-[180%] font-bold inline-block max-w-full z-2 
+                     p-4 border-l-4 border-blue-600 bg-blue-50 rounded-lg shadow-md 
+                     mq450:text-lg mq450:leading-[32px] text-gray-800 italic transition-transform duration-300 
+                     hover:scale-105">
+  “I love how VLearnUp combines personalized learning with the feel of offline classes. It’s truly a game-changer for online education.”
+</blockquote>
+
+                    <div className="self-stretch relative flex flex-col items-start justify-center h-[100px] p-4 bg-white rounded-lg shadow-lg">
+                      <div className="flex flex-row items-center justify-start gap-1 mb-2">
                         <img
-                          className="h-6 w-6 min-h-[24px] z-2"
+                          className="h-6 w-6 "
                           loading="lazy"
                           alt=""
                           src="/star-1.svg"
                         />
                         <img
-                          className="h-6 w-6 min-h-[24px] z-2"
+                          className="h-6 w-6 "
                           loading="lazy"
                           alt=""
                           src="/star-2.svg"
                         />
                         <img
-                          className="h-6 w-6 min-h-[24px] z-2"
+                          className="h-6 w-6 "
                           loading="lazy"
                           alt=""
                           src="/star-3.svg"
                         />
                         <img
-                          className="h-6 w-6 min-h-[24px] z-2"
+                          className="h-6 w-6 "
                           alt=""
                           src="/stars.svg"
                         />
                         <img
-                          className="h-6 w-6 min-h-[24px] z-2"
+                          className="h-6 w-6 "
                           alt=""
                           src="/stars1.svg"
                         />
                       </div>
-                      <div className="absolute top-[12px] left-0 leading-[180%] font-semibold z-2">
+                      <div className="leading-[1.2] font-semibold text-gray-800 text-lg z-2">
                         Amber Shaw
                       </div>
-                      <div className="absolute top-[36px] left-[394px] text-lg tracking-[0.02em] leading-[180%] font-semibold text-lightslategray z-2">
+                      <div className="text-base tracking-[0.02em] leading-[1.5] font-semibold text-gray-500 z-2">
                         2 reviews at VLearnUp
                       </div>
                     </div>
