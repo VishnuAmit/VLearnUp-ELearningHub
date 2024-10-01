@@ -10,16 +10,16 @@ const Testimonials = ({ className = "" }) => {
     <div className="w-20 flex flex-col items-start justify-start pt-4 px-0 pb-0 box-border">
       <div className="self-stretch h-px relative box-border border-t border-solid border-darkslateblue-200" />
     </div>
-    <b className="relative tracking-[0.2em] text-base text-darkslateblue-400">
+    <b className="relative tracking-[0.2em] mq450:text-base">
       TESTIMONIAL
     </b>
   </div>
   
-  <div className="absolute top-[59px] left-0 w-full flex flex-col items-start justify-start gap-4 max-w-full text-5xl text-darkslateblue-300">
-    <h1 className="m-0 relative text-inherit font-bold inline-block max-w-full text-3xl mq450:text-4xl mq850:text-5xl">
+  <div className="absolute top-[59px] left-[0px] w-[612px] flex flex-col items-start justify-start gap-[22px] max-w-full text-41xl text-darkslateblue-300">
+    <h1 className="m-0 relative text-inherit font-bold font-inherit inline-block max-w-full mq450:text-17xl mq850:text-29xl">
       What They Say?
     </h1>
-    <div className="self-stretch flex flex-row items-start justify-start py-0 pr-0 pl-0 box-border max-w-full text-2xl text-slategray-100 font-poppins">
+    <div className="self-stretch flex flex-row items-start justify-start py-0 pr-0 pl-[5px] box-border max-w-full text-7xl text-slategray-100 font-poppins">
       <b className="flex-1 relative tracking-[0.02em] leading-[160%] inline-block max-w-full">
         While VLearnUp is new, we’re excited to hear from students and educators who are exploring our platform.
       </b>
@@ -32,7 +32,7 @@ const Testimonials = ({ className = "" }) => {
         <div className="self-stretch flex flex-row items-start justify-start py-0 pr-0 pl-0.5 box-border max-w-full">
           <div className="flex-1 flex flex-col items-start justify-start gap-6 max-w-full">
             <div className="w-full flex flex-row items-start justify-start py-0 px-2 box-border max-w-full">
-              <b className="flex-1 relative tracking-[0.02em] leading-[160%] inline-block max-w-full mq450:text-xl mq450:leading-[33px]">
+              <b className="flex-1 relative tracking-[0.02em] leading-[160%] inline-block max-w-full mq450:text-2xl mq450:leading-[33px]">
                 We’re committed to providing an exceptional learning experience and would love to hear your feedback.
               </b>
             </div>
@@ -42,19 +42,20 @@ const Testimonials = ({ className = "" }) => {
           </div>
         </div>
 
-        <div className="rounded-3xl border border-lightseagreen flex flex-row items-center justify-start py-2 px-4 gap-4 max-w-full text-3xl text-lightseagreen font-nunito-sans">
-          <div className="flex flex-col items-start justify-start pt-3 px-0 pb-0">
-            <b className="relative tracking-[0.02em] leading-[36px] z-[1] text-lg">
-              Write your assessment
-            </b>
-          </div>
-          <img
-            className="h-20 w-20"
-            loading="lazy"
-            alt=""
-            src="/group-32.svg"
-          />
-        </div>
+        <div className="rounded-3xl border border-lightseagreen bg-white shadow-md flex flex-row items-center justify-start py-3 px-5 gap-4 max-w-full text-3xl text-lightseagreen font-nunito-sans hover:shadow-lg transition-shadow duration-300">
+  <div className="flex flex-col items-start justify-start pt-2 px-0 pb-0">
+    <b className="relative tracking-[0.02em] leading-[36px] z-[1] text-lg hover:text-lightseagreen-600 transition-colors duration-300">
+      Write your assessment
+    </b>
+  </div>
+  <img
+    className="h-16 w-16 transition-transform duration-300 transform hover:scale-110"
+    loading="lazy"
+    alt=""
+    src="/group-32.svg"
+  />
+</div>
+
       </div>
     </div>
 
