@@ -26,7 +26,7 @@ const PlatformOverview = ({ className = "" }) => {
           </div>
         </div>
         <div className="self-stretch flex flex-row items-end justify-center gap-[88px] max-w-full text-13xl text-white mq450:gap-[22px] mq850:gap-[44px] mq1225:flex-wrap">
-          <div className="flex-1 flex flex-col items-center justify-start pt-[135px] pb-32 pr-8 pl-5 box-border gap-[17px] bg-[url('/public/image-23@2x.png')] bg-cover bg-no-repeat bg-[top] min-w-[398px] max-w-full mq450:pt-[88px] mq450:pb-[83px] mq450:box-border mq850:min-w-full hover:shadow-lg hover:bg-opacity-50 transition-all duration-300 ease-in-out">
+          <div className="flex-1 flex flex-col items-center justify-start pt-[135px] pb-32 pr-8 pl-5 box-border gap-[17px] bg-[url('/public/image-23@2x.png')] bg-cover bg-no-repeat bg-[top] min-w-[398px] max-w-full mq450:pt-[88px] mq450:pb-[83px] hover:shadow-xl hover:bg-opacity-70 transition-all duration-300 ease-in-out">
             <img
               className="w-[612px] h-[408px] relative object-cover hidden max-w-full"
               alt=""
