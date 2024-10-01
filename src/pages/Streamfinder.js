@@ -176,4 +176,3 @@ function CardComponent({ title, text, buttonText, imgSrc , heading}) {
   }
   
   export default Streamfinder;
-

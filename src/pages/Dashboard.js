@@ -172,8 +172,8 @@ const Dashboard = () => {
                       z-index: 2;
                     `}
                   >
-                    <span className={css``}>Welcome back, B</span>
-                    <span className={css``}>ella</span>
+                    <span className={css``}>Welcome back, V</span>
+                    <span className={css``}>ishnu</span>
                     <span className={css``}>
                       ! Your progress is really good. Keep it up
                     </span>

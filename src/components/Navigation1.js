@@ -273,7 +273,7 @@ const Navigation1 = ({ className = "" }) => {
               z-index: 1;
             `}
           >
-            MATAVERSE
+            VLearnUp
           </a>
         </div>
       </div>

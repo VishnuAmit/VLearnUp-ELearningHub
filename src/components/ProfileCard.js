@@ -155,7 +155,7 @@ const ProfileCard = ({ className = "" }) => {
                   }
                 `}
               >
-                Irfan Ahsan
+                Vishnu KP
               </h2>
             </div>
           </div>
@@ -171,7 +171,7 @@ const ProfileCard = ({ className = "" }) => {
               }
             `}
           >
-            Middle UX/UI Designer
+            Amrita Vishwa Vidyapeetham
           </div>
         </div>
       </div>
