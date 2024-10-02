@@ -74,7 +74,7 @@ def chat():
         user_input = request.json.get('message')
         if user_input:
             chat_history.append({"role": "user", "content": user_input})
-            chat_history.append({"role": "user" "content": "Your are a chatbot in an Educational site."})
+            chat_history.append({"role": "user", "content": "Your are a chatbot in an Educational site."})
             model = genai.GenerativeModel("gemini-1.5-flash")
 
             chat = model.start_chat(
