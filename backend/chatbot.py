@@ -53,21 +53,17 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import google.generativeai as genai
 from google.generativeai.types import HarmCategory, HarmBlockThreshold
-from dotenv import load_dotenv  # Import the dotenv library
+from dotenv import load_dotenv  
 import os
 
 
 app = Flask(__name__)
 CORS(app)
 
-# Configure the Google Generative AI API
-# Load environment variables from .env file
 load_dotenv()
 
-# Use the API key from environment variables
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
-# Initialize Session State for Chat History
 chat_history = []
 
 
@@ -77,27 +73,21 @@ def chat():
     try:
         user_input = request.json.get('message')
         if user_input:
-            # Add User Message to History
             chat_history.append({"role": "user", "content": user_input})
-
-            # Initialize Gemini LLM
+            chat_history.append({"role": "user" "content": "Your are a chatbot in an Educational site."})
             model = genai.GenerativeModel("gemini-1.5-flash")
 
-            # Create a chat instance with the conversation history
             chat = model.start_chat(
                 history=[
                     {"role": "user", "parts": user_input},
-                    # Include previous chatbot responses in the history if needed
+                    
                 ]
             )
 
-            # Generate Chatbot Response
             bot_response = chat.send_message("Continue the conversation:\n" + "\n".join([f"{msg['role'].capitalize()}: {msg['content']}" for msg in chat_history]))
 
-            # Log the bot response for debugging
             print("Bot response:", bot_response.text)
 
-            # Add Chatbot Response to History
             chat_history.append({"role": "chatbot", "content": bot_response.text})
 
             return jsonify({'response': bot_response.text})
@@ -105,7 +95,7 @@ def chat():
         return jsonify({'error': 'No message provided'}), 400
 
     except Exception as e:
-        print("Error:", str(e))  # Log any errors that occur
+        print("Error:", str(e)) 
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {
   Button,
   TextField,
@@ -14,14 +14,13 @@ const Chatbot = () => {
   const [userMessage, setUserMessage] = useState('');
   const [chatHistory, setChatHistory] = useState([]);
   const [isChatOpen, setIsChatOpen] = useState(false);
+  const chatHistoryRef = useRef(null); 
 
   const handleSendMessage = async () => {
     if (!userMessage) return;
 
-    // Add user message to chat history
     setChatHistory((prev) => [...prev, { role: 'user', text: userMessage }]);
 
-    // Call the API to get a response from the chatbot
     const response = await fetch('http://localhost:5001/chat', {
       method: 'POST',
       headers: {
@@ -32,22 +31,25 @@ const Chatbot = () => {
 
     const data = await response.json();
 
-    // Add the chatbot response to chat history
     if (data.response) {
       setChatHistory((prev) => [...prev, { role: 'chatbot', text: data.response }]);
     }
 
-    // Clear the input field
     setUserMessage('');
   };
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
-      e.preventDefault(); // Prevents the default action of the Enter key
-      handleSendMessage(); // Call the send message function
-      setUserMessage('');
+      e.preventDefault(); 
+      handleSendMessage(); 
     }
   };
+
+  useEffect(() => {
+    if (chatHistoryRef.current) {
+      chatHistoryRef.current.scrollTop = chatHistoryRef.current.scrollHeight;
+    }
+  }, [chatHistory]); 
 
   return (
     <>
@@ -74,7 +76,7 @@ const Chatbot = () => {
             bottom: '80px',
             right: '20px',
             width: '400px',
-            height: '500px', // Set a fixed height for the chat box
+            height: '500px', 
             display: 'flex',
             flexDirection: 'column',
             padding: '16px',
@@ -83,6 +85,7 @@ const Chatbot = () => {
           }}
         >
           <Box
+            ref={chatHistoryRef} 
             style={{
               flex: 1,
               overflowY: 'auto',
@@ -100,7 +103,7 @@ const Chatbot = () => {
                   key={index}
                   style={{
                     marginBottom: '10px',
-                    color: msg.role === 'user' ? 'blue' : 'green',
+                    color: msg.role === 'user' ? 'grey' : 'green',
                     textAlign: msg.role === 'user' ? 'right' : 'left',
                   }}
                 >
@@ -115,7 +118,7 @@ const Chatbot = () => {
             variant="outlined"
             value={userMessage}
             onChange={(e) => setUserMessage(e.target.value)}
-            onKeyDown={handleKeyDown}
+            onKeyDown={handleKeyDown} 
             placeholder="Type your message..."
             fullWidth
             style={{ marginBottom: '8px' }}
@@ -128,8 +131,11 @@ const Chatbot = () => {
             onClick={handleSendMessage}
             variant="contained"
             color="primary"
-            fullWidth
-            style={{ borderRadius: '20px' }}
+            style={{
+              borderRadius: '20px',
+              backgroundColor: 'rgb(242, 237, 103)', 
+              color: 'black', 
+            }}
           >
             Send
           </Button>
