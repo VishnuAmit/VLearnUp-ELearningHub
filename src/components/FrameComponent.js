@@ -9,14 +9,11 @@ const FrameComponent = ({ className = "" }) => {
     >
       <div className="w-[1711px] flex flex-col items-start justify-start gap-[47px] max-w-full mq850:gap-[23px]">
         <div className="self-stretch flex flex-row items-start justify-between gap-[20px] mq450:flex-wrap">
-        <h3 className="absolute left-[150px] m-0 relative text-inherit tracking-[0.05em] font-bold font-inherit 
-               text-center text-blue-800 mq450:text-lg mq850:text-5xl 
-               transition-transform duration-300 hover:scale-105">
-  Explore Courses
-</h3>
-
+          <h3 className="m-0 relative text-inherit tracking-[0.02em] font-bold font-inherit mq450:text-lg mq850:text-5xl">
+            Explore Courses
+          </h3>
           <div className="flex flex-col items-start justify-start pt-[18px] px-0 pb-0 text-xl text-orange">
-            <b className="absolute right-[100px] relative inline-block min-w-[67px] mq450:text-base">
+            <b className="relative inline-block min-w-[67px] mq450:text-base">
               See all
             </b>
           </div>
