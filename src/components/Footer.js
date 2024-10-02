@@ -73,7 +73,7 @@ const Footer = ({ className = "" }) => {
               </div>
             </div>
             <b className="relative tracking-wide inline-block max-w-full text-center text-lg text-white z-[1]">
-  {`© 2024 E-Class Learning Inc...`}
+  {`© 2024 E-Class Learning Inc.`}
 </b>
 
           </div>
