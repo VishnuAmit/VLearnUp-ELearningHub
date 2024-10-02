@@ -6,12 +6,9 @@ import {
   Typography,
   IconButton,
   Box,
-  AppBar,
-  Toolbar,
   Slide,
 } from '@mui/material';
 import ChatIcon from '@mui/icons-material/Chat';
-import CloseIcon from '@mui/icons-material/Close';
 
 const Chatbot = () => {
   const [userMessage, setUserMessage] = useState('');
@@ -44,6 +41,14 @@ const Chatbot = () => {
     setUserMessage('');
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault(); // Prevents the default action of the Enter key
+      handleSendMessage(); // Call the send message function
+      setUserMessage('');
+    }
+  };
+
   return (
     <>
       <IconButton
@@ -52,7 +57,7 @@ const Chatbot = () => {
           position: 'fixed',
           bottom: '20px',
           right: '20px',
-          zIndex: 1000, // Increased z-index for visibility
+          zIndex: 1000,
           backgroundColor: 'white',
           borderRadius: '50%',
           boxShadow: '0 2px 10px rgba(0, 0, 0, 0.2)',
@@ -68,46 +73,49 @@ const Chatbot = () => {
             position: 'fixed',
             bottom: '80px',
             right: '20px',
-            width: '350px',
-            maxHeight: '450px',
+            width: '400px',
+            height: '500px', // Set a fixed height for the chat box
             display: 'flex',
             flexDirection: 'column',
             padding: '16px',
-            borderRadius: '8px',
-            zIndex: 999, 
+            borderRadius: '10px',
+            zIndex: 999,
           }}
         >
-          <AppBar position="static" color="primary">
-            <Toolbar>
-              <Typography variant="h6" style={{ flexGrow: 1 }}>
-                Chatbot
+          <Box
+            style={{
+              flex: 1,
+              overflowY: 'auto',
+              marginBottom: '16px',
+              padding: '8px',
+            }}
+          >
+            {chatHistory.length === 0 ? (
+              <Typography style={{ textAlign: 'center', color: 'grey' }}>
+                Start the conversation! 💬
               </Typography>
-              <IconButton edge="end" color="inherit" onClick={() => setIsChatOpen(false)}>
-                <CloseIcon />
-              </IconButton>
-            </Toolbar>
-          </AppBar>
-
-          <Box style={{ flex: 1, overflowY: 'auto', marginBottom: '16px', padding: '8px' }}>
-            {chatHistory.map((msg, index) => (
-              <Typography
-                key={index}
-                style={{
-                  marginBottom: '10px',
-                  color: msg.role === 'user' ? 'blue' : 'green',
-                  textAlign: msg.role === 'user' ? 'right' : 'left',
-                }}
-              >
-                <strong>{msg.role === 'user' ? 'You: ' : 'Chatbot: '}</strong>
-                {msg.text}
-              </Typography>
-            ))}
+            ) : (
+              chatHistory.map((msg, index) => (
+                <Typography
+                  key={index}
+                  style={{
+                    marginBottom: '10px',
+                    color: msg.role === 'user' ? 'blue' : 'green',
+                    textAlign: msg.role === 'user' ? 'right' : 'left',
+                  }}
+                >
+                  <strong>{msg.role === 'user' ? 'You: ' : ''}</strong>
+                  {msg.text}
+                </Typography>
+              ))
+            )}
           </Box>
 
           <TextField
             variant="outlined"
             value={userMessage}
             onChange={(e) => setUserMessage(e.target.value)}
+            onKeyDown={handleKeyDown}
             placeholder="Type your message..."
             fullWidth
             style={{ marginBottom: '8px' }}
