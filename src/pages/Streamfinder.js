@@ -74,6 +74,7 @@ const institutes = [
     "Indian Institute of Information Technology (IIIT) Una",
     "Indian Institute of Information Technology (IIIT) Vadodara",
     "Indian Institute of Information Technology (IIIT) Vellore",
+    "KLN",
     "Other"
   ];
   
