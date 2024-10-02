@@ -2,6 +2,7 @@ import { css } from "@emotion/css";
 import Navigation1 from "../components/Navigation1";
 import ProgressBar from "../components/ProgressBar";
 import ProfileCard from "../components/ProfileCard";
+import Chatbot from "../components/Chatbot";
 
 const Dashboard = () => {
   return (
@@ -1871,6 +1872,7 @@ const Dashboard = () => {
             src="/rectangle-1.svg"
           /> */}
           <ProfileCard />
+          <Chatbot />
         </div>
       </main>
     </div>
