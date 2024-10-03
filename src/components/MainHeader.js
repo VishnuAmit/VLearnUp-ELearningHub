@@ -118,14 +118,14 @@ const MainHeader = ({coursesRef,articleRef,featuresRef,exploreRef,aboutRef,class
               <div className="self-stretch flex flex-row items-start justify-evenly gap-[20px] mq1400:hidden">
                 
                 <button
-                  className="bg-transparent [text-decoration:none] relative tracking-[0.02em] font-bold text-white text-lg inline-block min-w-[83px] z-[1] hover:text-[#F48C06]"
+                  className="bg-transparent cursor-pointer [text-decoration:none] relative tracking-[0.02em] font-bold text-white text-lg inline-block min-w-[83px] z-[1] hover:text-[#F48C06]"
                   onClick={() => handleScrollToSection(coursesRef)}
                 >
                 Courses
                 </button>
 
                 <button
-                  className=" bg-transparent [text-decoration:none] relative tracking-[0.02em] font-bold text-white text-lg inline-block min-w-[83px] z-[1] hover:text-[#F48C06]"
+                  className=" bg-transparent cursor-pointer [text-decoration:none] relative tracking-[0.02em] font-bold text-white text-lg inline-block min-w-[83px] z-[1] hover:text-[#F48C06]"
                   onClick={() => handleScrollToSection(articleRef)}
                 >
                   Article
@@ -133,7 +133,7 @@ const MainHeader = ({coursesRef,articleRef,featuresRef,exploreRef,aboutRef,class
                 </button>
 
                 <button
-                  className=" bg-transparent [text-decoration:none] relative tracking-[0.02em] font-bold text-white text-lg inline-block min-w-[83px] z-[1] hover:text-[#F48C06]"
+                  className=" bg-transparent cursor-pointer [text-decoration:none] relative tracking-[0.02em] font-bold text-white text-lg inline-block min-w-[83px] z-[1] hover:text-[#F48C06]"
                   onClick={() => handleScrollToSection(exploreRef)}
                 >
                   Explore
@@ -141,7 +141,7 @@ const MainHeader = ({coursesRef,articleRef,featuresRef,exploreRef,aboutRef,class
                 </button>
 
                 <button
-                  className=" bg-transparent [text-decoration:none] relative tracking-[0.02em] font-bold text-white text-lg inline-block min-w-[83px] z-[1] hover:text-[#F48C06]"
+                  className=" bg-transparent cursor-pointer [text-decoration:none] relative tracking-[0.02em] font-bold text-white text-lg inline-block min-w-[83px] z-[1] hover:text-[#F48C06]"
                   onClick={() => handleScrollToSection(aboutRef)}
                 >
                  About Us
