@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
-
-const LatestUpdates = ({ className = "" }) => {
+import { forwardRef } from "react";
+const LatestUpdates = forwardRef(({ className = "" }, ref) => {
   return (
-    <section
+    <section ref={ref}
       className={`w-[1907px] flex flex-row items-start justify-center pt-0 px-5 pb-[106px] box-border max-w-full text-left text-17xl text-darkslateblue-300 font-nunito-sans mq850:pb-[45px] mq850:box-border mq1225:pb-[69px] mq1225:box-border ${className}`}
     >
       <div className="w-[1557px] flex flex-col items-start justify-start gap-[100px] max-w-full mq450:gap-[25px] mq850:gap-[50px]">
@@ -148,10 +148,11 @@ const LatestUpdates = ({ className = "" }) => {
       </div>
     </section>
   );
-};
+});
 
 LatestUpdates.propTypes = {
   className: PropTypes.string,
 };
 
 export default LatestUpdates;
+
