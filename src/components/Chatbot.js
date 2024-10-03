@@ -87,6 +87,7 @@ const Chatbot = () => {
           <Box
             ref={chatHistoryRef} 
             style={{
+              position: 'fixed',
               flex: 1,
               overflowY: 'auto',
               marginBottom: '16px',
