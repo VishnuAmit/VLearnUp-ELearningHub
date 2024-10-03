@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
-
-const FrameComponent2 = ({ className = "" }) => {
+import { forwardRef } from "react";
+const FrameComponent2 = forwardRef(({ className = "" }, ref) => {
   return (
-    <section
+    <section ref={ref}
       className={`w-[1853px] flex flex-row items-start justify-center pt-0 px-5 pb-[77.9px] box-border max-w-full text-left text-17xl text-navy font-poppins mq450:pb-[33px] mq450:box-border mq1225:pb-[51px] mq1225:box-border ${className}`}
     >
       <div className="w-[1536.3px] flex flex-col items-start justify-start gap-[132px] max-w-full mq450:gap-[16px] mq850:gap-[33px] mq1225:gap-[66px]">
@@ -181,7 +181,7 @@ const FrameComponent2 = ({ className = "" }) => {
       </div>
     </section>
   );
-};
+});
 
 FrameComponent2.propTypes = {
   className: PropTypes.string,

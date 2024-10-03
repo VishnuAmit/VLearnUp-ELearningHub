@@ -11,11 +11,23 @@ import FrameComponent from "../components/FrameComponent";
 import Testimonials from "../components/Testimonials";
 import LatestUpdates from "../components/LatestUpdates";
 import Footer from "../components/Footer";
+import { useRef } from "react";
 
 const ELearning = () => {
+  const coursesRef = useRef(null);
+  const articleRef = useRef(null);
+  const featuresRef = useRef(null);
+  const exploreRef=useRef(null);
+  const aboutRef=useRef(null);
   return (
     <div className="w-full relative bg-white overflow-hidden flex flex-col items-end justify-start pt-[52.2px] px-0 pb-0 box-border gap-[160px] leading-[normal] tracking-[normal] mq850:gap-[40px] mq1225:gap-[80px]">
-      <MainHeader />
+      <MainHeader 
+      coursesRef={coursesRef}
+      articleRef={articleRef}
+      featuresRef={featuresRef}
+      exploreRef={exploreRef}
+      aboutRef={aboutRef}
+      />
       <FrameComponent4 />
       <section className="w-[1779px] flex flex-row items-start justify-center py-0 px-5 box-border max-w-full text-left text-17xl text-navy font-poppins">
         <div className="w-[837px] flex flex-col items-start justify-start gap-[20px] max-w-full">
@@ -31,9 +43,9 @@ const ELearning = () => {
         </div>
       </section>
       <LearningPaths />
-      <PlatformOverview />
+      <PlatformOverview ref={aboutRef}/>
       <FrameComponent3 />
-      <FrameComponent2 />
+      <FrameComponent2 ref={exploreRef}/>
       <SmartNotesCard />
       <section className="w-[1901.2px] flex flex-row items-start justify-center pt-0 px-5 pb-[33px] box-border max-w-full">
         <div className="w-[1649.2px] flex flex-row items-start justify-start relative max-w-full">
@@ -55,9 +67,9 @@ const ELearning = () => {
           </b>
         </button>
       </div>
-      <FrameComponent />
+      <FrameComponent ref={coursesRef}/>
       <Testimonials />
-      <LatestUpdates />
+      <LatestUpdates ref={articleRef}/>
       <section className="w-full h-[1130px] absolute !m-[0] top-[0px] right-[0px] left-[0px]">
         <img
           className="absolute top-[-230px] left-[-98px] w-[2196.5px] h-[1360px]"

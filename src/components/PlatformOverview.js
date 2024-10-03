@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
-
-const PlatformOverview = ({ className = "" }) => {
+import { forwardRef } from "react";
+const PlatformOverview = forwardRef(({ className = "" }, ref) => {
   return (
-    <section
+    <section ref={ref}
       className={`self-stretch flex flex-row items-start justify-center pt-0 px-5 pb-8 box-border max-w-full text-center text-25xl text-navy font-poppins ${className}`}
     >
       <div className="w-[1300px] flex flex-col items-start justify-start gap-[32px] max-w-full mq850:gap-[16px]">
@@ -74,10 +74,11 @@ const PlatformOverview = ({ className = "" }) => {
       </div>
     </section>
   );
-};
+});
 
 PlatformOverview.propTypes = {
   className: PropTypes.string,
 };
 
 export default PlatformOverview;
+
