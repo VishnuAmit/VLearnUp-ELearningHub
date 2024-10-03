@@ -1,10 +1,10 @@
 import CoursesGrid from "./CoursesGrid";
 import FrameComponent1 from "./FrameComponent1";
 import PropTypes from "prop-types";
-
-const FrameComponent = ({ className = "" }) => {
+import { forwardRef } from "react";
+const FrameComponent = forwardRef(({ className = "" }, ref) => {
   return (
-    <section
+    <section ref={ref}
       className={`self-stretch flex flex-row items-start justify-center pt-0 pb-[165px] pr-5 pl-[21px] box-border max-w-full text-left text-11xl text-black font-poppins mq450:pb-[70px] mq450:box-border mq1225:pb-[107px] mq1225:box-border ${className}`}
     >
       <div className="w-[1711px] flex flex-col items-start justify-start gap-[47px] max-w-full mq850:gap-[23px]">
@@ -104,10 +104,12 @@ const FrameComponent = ({ className = "" }) => {
       </div>
     </section>
   );
-};
+});
+
 
 FrameComponent.propTypes = {
   className: PropTypes.string,
 };
 
 export default FrameComponent;
+
