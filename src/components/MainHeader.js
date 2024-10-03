@@ -113,19 +113,19 @@ const MainHeader = ({coursesRef,articleRef,featuresRef,exploreRef,aboutRef,class
             </a>
           </div>
           <div className="w-[1148px] flex flex-row items-end justify-start gap-[78px] max-w-full text-3xl mq850:gap-[19px] mq1225:gap-[39px]">
-            <div className="flex-1 flex flex-col items-start justify-end pt-0 px-0 box-border max-w-full">
+            <div className="flex-1 flex flex-col items-start justify-end pt-0 px-0 pb-3 box-border max-w-full">
 
               <div className="self-stretch flex flex-row items-start justify-evenly gap-[20px] mq1400:hidden">
                 
                 <button
-                  className=" h-[60px] w-40 [text-decoration:none] relative tracking-[0.02em] font-bold text-[inherit] inline-block min-w-[83px] z-[1] bg-gray-200 shadow-[0px_20px_24px_rgba(0,_0,_0,_0.03)] rounded-mini  text-white text-lg font-bold hover:bg-[#F48C06] "
+                  className="bg-transparent [text-decoration:none] relative tracking-[0.02em] font-bold text-white text-lg inline-block min-w-[83px] z-[1] hover:text-[#F48C06]"
                   onClick={() => handleScrollToSection(coursesRef)}
                 >
                 Courses
                 </button>
 
                 <button
-                  className="h-[60px] w-40  [text-decoration:none] relative tracking-[0.02em] font-bold text-[inherit] inline-block min-w-[83px] z-[1] bg-gray-200 shadow-[0px_20px_24px_rgba(0,_0,_0,_0.03)] rounded-mini  text-white text-lg font-bold hover:bg-[#F48C06] "
+                  className=" bg-transparent [text-decoration:none] relative tracking-[0.02em] font-bold text-white text-lg inline-block min-w-[83px] z-[1] hover:text-[#F48C06]"
                   onClick={() => handleScrollToSection(articleRef)}
                 >
                   Article
@@ -133,7 +133,7 @@ const MainHeader = ({coursesRef,articleRef,featuresRef,exploreRef,aboutRef,class
                 </button>
 
                 <button
-                  className="h-[60px] w-40 [text-decoration:none] relative tracking-[0.02em] font-bold text-[inherit] inline-block min-w-[83px] z-[1] bg-gray-200 shadow-[0px_20px_24px_rgba(0,_0,_0,_0.03)] rounded-mini  text-white text-lg font-bold hover:bg-[#F48C06] "
+                  className=" bg-transparent [text-decoration:none] relative tracking-[0.02em] font-bold text-white text-lg inline-block min-w-[83px] z-[1] hover:text-[#F48C06]"
                   onClick={() => handleScrollToSection(exploreRef)}
                 >
                   Explore
@@ -141,7 +141,7 @@ const MainHeader = ({coursesRef,articleRef,featuresRef,exploreRef,aboutRef,class
                 </button>
 
                 <button
-                  className="h-[60px] w-40 [text-decoration:none] relative tracking-[0.02em] font-bold text-[inherit] inline-block min-w-[83px] z-[1] bg-gray-200 shadow-[0px_20px_24px_rgba(0,_0,_0,_0.03)] rounded-mini  text-white text-lg font-bold hover:bg-[#F48C06] "
+                  className=" bg-transparent [text-decoration:none] relative tracking-[0.02em] font-bold text-white text-lg inline-block min-w-[83px] z-[1] hover:text-[#F48C06]"
                   onClick={() => handleScrollToSection(aboutRef)}
                 >
                  About Us
@@ -195,4 +195,3 @@ const MainHeader = ({coursesRef,articleRef,featuresRef,exploreRef,aboutRef,class
 };
 
 export default MainHeader;
-
