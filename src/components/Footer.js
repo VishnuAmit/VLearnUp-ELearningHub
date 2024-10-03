@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-
 const Footer = ({ className = "" }) => {
   return (
     <footer
@@ -38,13 +37,14 @@ const Footer = ({ className = "" }) => {
         </div>
         <div className="self-stretch flex flex-row flex-wrap items-start justify-center gap-[20px] max-w-full">
           <div className="flex-1 rounded-61xl box-border flex flex-row items-start justify-start pt-[13px] px-7 pb-3 min-w-[118px] max-w-full z-[1] border-[1px] border-solid border-white">
-            <div className="h-[60px] w-[400px] relative rounded-61xl box-border hidden max-w-full border-[1px] border-solid border-white" />
+            <div className="h-[60px] w-[800px] relative rounded-61xl box-border hidden max-w-full border-[1px] border-solid border-white" />
             <input
-              className="w-[118px] [border:none] [outline:none] inline-block font-poppins text-xl bg-[transparent] h-[31px] relative tracking-[0.04em] font-bold text-white text-center p-0 z-[2] mq450:text-base"
+              className="w-full [border:none] [outline:none] inline-block font-poppins text-xl bg-[transparent] h-[31px] relative tracking-[0.04em] font-bold text-white text-center p-0 z-[2] mq450:text-base"
               placeholder="Your Email"
               type="text"
             />
           </div>
+
           <button className="cursor-pointer [border:none] pt-3.5 pb-[13px] pr-8 pl-[33px] bg-dimgray rounded-41xl flex flex-row items-start justify-start z-[1]">
             <div className="h-[29px] w-[151px] relative [filter:blur(54px)] rounded-41xl bg-gray-500 hidden" />
             <div className="h-[60px] w-[179px] relative rounded-41xl bg-dimgray hidden" />
