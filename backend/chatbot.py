@@ -50,23 +50,22 @@
 
 
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import google.generativeai as genai
 from google.generativeai.types import HarmCategory, HarmBlockThreshold
-from dotenv import load_dotenv  # Import the dotenv library
+from dotenv import load_dotenv  
 import os
 
 
 app = Flask(__name__)
+CORS(app)
 
-# Configure the Google Generative AI API
-# Load environment variables from .env file
 load_dotenv()
 
-# Use the API key from environment variables
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
-# Initialize Session State for Chat History
 chat_history = []
+
 
 @app.route('/chat', methods=['POST'])
 def chat():
@@ -74,35 +73,29 @@ def chat():
     try:
         user_input = request.json.get('message')
         if user_input:
-            # Add User Message to History
             chat_history.append({"role": "user", "content": user_input})
-
-            # Initialize Gemini LLM
+            chat_history.append({"role": "user", "content": "Your are a chatbot in an Educational site."})
             model = genai.GenerativeModel("gemini-1.5-flash")
 
-            # Create prompt with conversation history
-            history_text = "\n".join([f"{msg['role'].capitalize()}: {msg['content']}" for msg in chat_history])
-            prompt = f"Continue the conversation:\n{history_text}\nUser: {user_input}\nChatbot:"
-
-            # Generate Chatbot Response
-            response = model.generate_content(
-                prompt=prompt,
-                safety_settings={
-                    HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_NONE,
-                    HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_NONE,
-                }
+            chat = model.start_chat(
+                history=[
+                    {"role": "user", "parts": user_input},
+                    
+                ]
             )
 
-            bot_response = response.text
+            bot_response = chat.send_message("Continue the conversation:\n" + "\n".join([f"{msg['role'].capitalize()}: {msg['content']}" for msg in chat_history]))
 
-            # Add Chatbot Response to History
-            chat_history.append({"role": "chatbot", "content": bot_response})
+            print("Bot response:", bot_response.text)
 
-            return jsonify({'response': bot_response, 'messages': chat_history})
+            chat_history.append({"role": "chatbot", "content": bot_response.text})
+
+            return jsonify({'response': bot_response.text})
 
         return jsonify({'error': 'No message provided'}), 400
 
     except Exception as e:
+        print("Error:", str(e)) 
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
