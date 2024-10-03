@@ -35,7 +35,7 @@ const LatestUpdates = forwardRef(({ className = "" }, ref) => {
 
     const intervalId = setInterval(() => {
       fetchArticles(); // Fetch articles every 5 minutes
-    }, 120000); // 5 minutes in milliseconds
+    }, 300000); // 2 minutes in milliseconds
 
     return () => clearInterval(intervalId); // Cleanup the interval on component unmount
   }, []);
