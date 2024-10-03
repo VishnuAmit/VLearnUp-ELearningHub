@@ -20,7 +20,7 @@ const ELearning = () => {
   const exploreRef=useRef(null);
   const aboutRef=useRef(null);
   return (
-    <div className="w-full relative bg-white overflow-hidden flex flex-col items-end justify-start pt-[52.2px] px-0 pb-0 box-border gap-[160px] leading-[normal] tracking-[normal] mq850:gap-[40px] mq1225:gap-[80px]">
+    <div className="items-center w-full relative bg-white overflow-hidden flex flex-col items-end justify-start pt-[52.2px] px-0 pb-0 box-border gap-[160px] leading-[normal] tracking-[normal] mq850:gap-[40px] mq1225:gap-[80px]">
       <MainHeader 
       coursesRef={coursesRef}
       articleRef={articleRef}

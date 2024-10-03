@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 const Footer = ({ className = "" }) => {
   return (
     <footer
-      className={`self-stretch bg-darkslategray flex flex-col items-start justify-start pt-[74px] pb-10 pr-[586px] pl-[661px] box-border gap-[95.5px] max-w-full text-center text-13xl text-white font-poppins mq850:gap-[24px] mq850:pt-12 mq850:pb-[26px] mq850:pr-[146px] mq850:pl-[165px] mq850:box-border mq1225:gap-[48px] mq1225:pl-[330px] mq1225:pr-[293px] mq1225:box-border ${className}`}
+      className={`self-stretch bg-darkslategray flex flex-col items-start justify-start pt-[40px] pb-[40px] items-center box-border gap-[95.5px] max-w-full text-center text-13xl text-white font-poppins mq850:gap-[24px] mq850:pt-12 mq850:pb-[26px] mq850:box-border mq1225:gap-[48px] mq1225:box-border ${className}`}
     >
       <div className="w-[1920px] h-[593px] relative bg-darkslategray hidden max-w-full" />
-      <div className="self-stretch flex flex-row items-start justify-end max-w-full text-left">
+      <div className="self-stretch flex flex-row items-start justify-center max-w-full text-left">
         <div className="w-[576px] flex flex-row flex-wrap items-start justify-start gap-[29px] max-w-full">
           <div className="flex flex-col items-start justify-start pt-[17px] px-0 pb-0">
             <div className="flex flex-row items-start justify-start relative">
@@ -36,7 +36,7 @@ const Footer = ({ className = "" }) => {
             Subscribe to get our Newsletter
           </b>
         </div>
-        <div className="self-stretch flex flex-row flex-wrap items-start justify-center gap-[20px] max-w-full">
+        <div className="self-stretch flex flex-row flex-wrap items-start justify-center gap-[20px] max-w-full items-center">
           <div className="flex-1 rounded-61xl box-border flex flex-row items-start justify-start pt-[13px] px-7 pb-3 min-w-[118px] max-w-full z-[1] border-[1px] border-solid border-white">
             <div className="h-[60px] w-[400px] relative rounded-61xl box-border hidden max-w-full border-[1px] border-solid border-white" />
             <input
@@ -54,7 +54,7 @@ const Footer = ({ className = "" }) => {
           </button>
         </div>
       </div>
-      <div className="w-[601px] flex flex-row items-start justify-start py-0 px-[15px] box-border max-w-full text-3xl">
+      <div className="w-[620px] flex flex-row items-start justify-start py-0 px-[15px] box-border max-w-full text-3xl h-[120px]">
         <div className="h-[86px] flex-1 relative max-w-full mq850:h-auto mq850:min-h-[86]">
           <div className="absolute top-[8px] left-[115px] box-border w-px h-[18px] z-[1] border-r-[1px] border-solid border-slategray-200" />
           <b className="absolute top-[0px] left-[0px] tracking-[0.04em] inline-block min-w-[97px] z-[1] mq450:text-lg">

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 const CoursesGrid = ({ className = "" }) => {
   return (
     <div
-      className={`w-[328.4px] flex flex-col items-end justify-start gap-[24px] max-w-full shrink-0 text-left text-sm text-slategray-100 font-poppins ${className}`}
+      className={`flex flex-col items-end justify-start gap-[24px] max-w-full shrink-0 text-left text-sm text-slategray-100 font-poppins w-[100%] ${className}`}
     >
       <div className="self-stretch flex flex-col items-start justify-start gap-[14px]">
         <div className="self-stretch flex flex-row items-start justify-between gap-[20px] mq450:flex-wrap">
