@@ -24,11 +24,14 @@ body {
 }
 
 .app-scale {
-  transform: scale(0.8); /* Scale down to 80% */
-  transform-origin: top left; /* Make sure scaling is from the top-left corner */
-  width: 125%; /* Adjust width to accommodate scaling */
-  height: 125%; /* Adjust height to accommodate scaling */
-
+/*  transform: scale(0.8);  Scale down to 80% */
+/*  transform-origin: top left;  Make sure scaling is from the top-left corner */
+/*  width: 125%;  Adjust width to accommodate scaling */
+/*  height: 125%;  Adjust height to accommodate scaling */
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 /* index.css or App.css */
@@ -53,3 +56,7 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.w-full {
+    width: 100%;
+    max-width: 1920px;
+}
