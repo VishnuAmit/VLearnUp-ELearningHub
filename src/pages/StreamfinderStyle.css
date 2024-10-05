@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.form {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px 0;
+}
+
+.stream-heading {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* card-container css */
+.card-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+  min-width: 150px;
+  flex: 1;
+}
+
+.card.selected {
+  box-shadow: 0 4px 15px rgba(0, 255, 0, 0.6);
+  border: 2px solid green;
+}

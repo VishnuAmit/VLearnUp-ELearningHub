@@ -2,7 +2,7 @@ import { css } from "@emotion/css";
 import FrameComponent6 from "./FrameComponent6";
 import PropTypes from "prop-types";
 
-const ProfileCard = ({ className = "" }) => {
+const ProfileCard = ({ className = "", firstName, lastName, institute }) => {
   return (
     <div
       className={[
@@ -17,7 +17,7 @@ const ProfileCard = ({ className = "" }) => {
           padding: 69px 23px 70px 24px;
           box-sizing: border-box;
           gap: 45px;
-          max-width: 100%;
+          max-width: 100%;  
           z-index: 2;
           text-align: left;
           font-size: 36px;
@@ -155,7 +155,7 @@ const ProfileCard = ({ className = "" }) => {
                   }
                 `}
               >
-                Vishnu KP
+                {firstName}_{lastName}
               </h2>
             </div>
           </div>
@@ -171,7 +171,7 @@ const ProfileCard = ({ className = "" }) => {
               }
             `}
           >
-            Amrita Vishwa Vidyapeetham
+            {institute}
           </div>
         </div>
       </div>
