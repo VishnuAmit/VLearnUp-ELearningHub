@@ -151,6 +151,7 @@ function Streamfinder() {
       },
     });
   };
+
   return (
     <div className="container">
       <div className="icon">
@@ -169,6 +170,8 @@ function Streamfinder() {
           ))}
         </Select>
         <input type="submit" />
+        <CourseInputModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} onSubmit={handleCourseSubmit} />
+
       </form>
       <div className="stream-heading">
         <h2>Select Your Stream</h2>
@@ -197,7 +200,6 @@ function Streamfinder() {
         />
       </div>
 
-     
     </div>
   );
 }

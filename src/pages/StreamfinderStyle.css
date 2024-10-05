@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.form {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px 0;
+}
+
+.stream-heading {
+  text-align: center;
+  margin-top: 20px;
+}
