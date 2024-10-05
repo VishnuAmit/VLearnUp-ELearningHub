@@ -155,7 +155,7 @@ const ProfileCard = ({ className = "", firstName, lastName, institute }) => {
                   }
                 `}
               >
-                {firstName} {lastName}
+                {firstName}_{lastName}
               </h2>
             </div>
           </div>
