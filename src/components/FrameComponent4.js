@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-const FrameComponent4 = ({ className = "" }) => {
+const FrameComponent4 = ({ className = "", componentAClicked }) => {
   return (
     <section
       className={`w-[1851px] flex flex-row items-start justify-end pt-0 px-[65px] pb-[136px] box-border max-w-full text-left text-35xl text-darkorange font-poppins mq850:pb-[88px] mq850:box-border mq1225:pl-8 mq1225:pr-8 mq1225:box-border ${className}`}
@@ -19,7 +19,7 @@ const FrameComponent4 = ({ className = "" }) => {
               your unique learning style.
             </b>
             <div className="self-stretch flex flex-row items-start justify-between gap-[20px] font-poppins mq850:flex-wrap">
-              <button className="cursor-pointer [border:none] py-[22px] px-[38px] bg-gray-200 rounded-61xl flex flex-row items-start justify-start whitespace-nowrap z-[1] hover:bg-gainsboro-300">
+              <button className="cursor-pointer [border:none] py-[22px] px-[38px] bg-gray-200 rounded-61xl flex flex-row items-start justify-start whitespace-nowrap z-[1] hover:bg-gainsboro-300" onClick={componentAClicked}>
                 <div className="h-20 w-[220px] relative rounded-61xl bg-gray-200 hidden" />
                 <div className="relative text-5xl font-semibold font-poppins text-white text-left z-[1]">
                   Join for free

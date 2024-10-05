@@ -11,7 +11,7 @@ import FrameComponent from "../components/FrameComponent";
 import Testimonials from "../components/Testimonials";
 import LatestUpdates from "../components/LatestUpdates";
 import Footer from "../components/Footer";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const ELearning = () => {
   const coursesRef = useRef(null);
@@ -19,16 +19,20 @@ const ELearning = () => {
   const featuresRef = useRef(null);
   const exploreRef=useRef(null);
   const aboutRef=useRef(null);
+
+  const [refreshDate, setRefreshDate] = useState(null);
+  
+  const componentAClicked = () => setRefreshDate(new Date())
   return (
     <div className="w-full relative bg-white overflow-hidden flex flex-col items-end justify-start pt-[52.2px] px-0 pb-0 box-border gap-[160px] leading-[normal] tracking-[normal] mq850:gap-[40px] mq1225:gap-[80px]">
-      <MainHeader 
+      <MainHeader  refreshDate={refreshDate}
       coursesRef={coursesRef}
       articleRef={articleRef}
       featuresRef={featuresRef}
       exploreRef={exploreRef}
       aboutRef={aboutRef}
       />
-      <FrameComponent4 />
+      <FrameComponent4 componentAClicked={componentAClicked}/>
       <section className="w-[1779px] flex flex-row items-start justify-center py-0 px-5 box-border max-w-full text-left text-17xl text-navy font-poppins">
         <div className="w-[837px] flex flex-col items-start justify-start gap-[20px] max-w-full">
           <div className="self-stretch flex flex-row items-start justify-center py-0 pr-5 pl-[90px] mq450:pl-5 mq450:box-border mq850:pl-[45px] mq850:box-border">
