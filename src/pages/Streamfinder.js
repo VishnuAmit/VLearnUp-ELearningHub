@@ -1,9 +1,12 @@
 import { render } from "react-dom";
 import { useForm } from "react-cool-form";
 import "../styles.scss";
-import { Card, Button } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { css } from "@emotion/css";
+import "./StreamfinderStyle.css";
+import CourseInputModal from "./CourseInputModal"
 
 const institutes = [
   "IIT Bombay",
@@ -79,10 +82,11 @@ const institutes = [
   "Other"
 ];
 
+
 const Field = ({ label, id, ...rest }) => (
   <div>
     <label htmlFor={id}>{label}</label>
-    <input id={id} {...rest} />
+    <input id={id} {...rest} required />
   </div>
 );
 
@@ -115,45 +119,61 @@ function CardComponent({ title, text, buttonText, imgSrc, heading, onClick }) {
 }
 
 function Streamfinder() {
-  const [selectedCourse, setSelectedCourse] = useState('');
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [formData, setFormData] = useState({});
+  const [selectedCourse, setSelectedCourse] = useState("");
+  const navigate = useNavigate();
 
-  const navigate = useNavigate();  // Use useNavigate hook for navigation
   const { form } = useForm({
     defaultValues: {
       firstName: "",
       lastName: "",
       dob: "",
       institute: "",
-      message: ""
     },
+
     onSubmit: (values) => {
-      const formData = { ...values, selectedCourse };
-      console.log(JSON.stringify(formData, undefined, 2));
-      navigate("/dashboard", { state: formData }); // Redirect to dashboard.js when the form is submitted & passed the formData 
-    }
+      setFormData(values);
+      setIsModalOpen(true);
+    },
   });
 
+  const handleCourseSubmit = (course) => {
+    if (!course) {
+      console.error("No course selected!");
+      return;
+    }
+    setSelectedCourse(course);
+    navigate("/dashboard", {
+      state: {
+        ...formData,
+        course,
+      },
+    });
+  };
   return (
     <div className="container">
       <div className="icon">
         <img src="/image-24@2x.png" alt="Icon" />
       </div>
       <form ref={form} className="form">
-        <Field label="First Name" id="first-name" name="firstName" />
-        <Field label="Last Name" id="last-name" name="lastName" />
-        <Field label="Date of Birth" id="dob" name="dob" type="date" />
-        <Select label="Institute Name" id="institute" name="institute">
+        <Field label="First Name" id="first-name" name="firstName" required />
+        <Field label="Last Name" id="last-name" name="lastName" required />
+        <Field label="Date of Birth" id="dob" name="dob" type="date" required />
+        <Select label="Institute Name" id="institute" name="institute" required>
           <option value="">Select your institute...</option>
           {institutes.map((institute, index) => (
-            <option key={index} value={institute}>{institute}</option>
-          ))} 
+            <option key={index} value={institute}>
+              {institute}
+            </option>
+          ))}
         </Select>
-        {/* <Textarea label="Message" id="message" name="message" /> */}
         <input type="submit" />
       </form>
       <div className="stream-heading">
         <h2>Select Your Stream</h2>
       </div>
+
       <div className="card-container">
         <CardComponent
           imgSrc="/image-25@2x.png"
@@ -176,8 +196,11 @@ function Streamfinder() {
           onClick={() => setSelectedCourse('UPSC')}
         />
       </div>
+
+     
     </div>
   );
 }
+
 
 export default Streamfinder;
