@@ -106,9 +106,9 @@ const Textarea = ({ label, id, ...rest }) => (
   </div>
 );
 
-function CardComponent({ title, text, buttonText, imgSrc, heading, onClick }) {
+function CardComponent({ title, text, buttonText, imgSrc, heading, onClick , isSelected}) {
   return (
-    <Card className="card" onClick={onClick}>
+    <Card  className={`card ${isSelected ? 'selected' : ''}`}  onClick={onClick}>
       <Card.Img className="card-img" variant="top" src={imgSrc} />
       <Card.Body className="card-body">
         {/* <Card.Title>{title}</Card.Title> */}
@@ -181,21 +181,25 @@ function Streamfinder() {
         <CardComponent
           imgSrc="/image-25@2x.png"
           heading="NEET UG"
+          isSelected={selectedCourse === 'NEET-UG'}
           onClick={() => setSelectedCourse('NEET-UG')}
         />
         <CardComponent
           imgSrc="/image-26@2x.png"
           heading="IIT-JEE"
+          isSelected={selectedCourse === 'IIT-JEE'}
           onClick={() => setSelectedCourse('IIT-JEE')}
         />
         <CardComponent
           imgSrc="/image-27@2x.png"
           heading="BANKING"
+          isSelected={selectedCourse === 'BANKING'}
           onClick={() => setSelectedCourse('BANKING')}
         />
         <CardComponent
           imgSrc="/image-28@2x.png"
           heading="UPSC"
+          isSelected={selectedCourse === 'UPSC'}
           onClick={() => setSelectedCourse('UPSC')}
         />
       </div>
