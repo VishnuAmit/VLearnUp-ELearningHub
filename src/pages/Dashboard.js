@@ -6,8 +6,8 @@ import Chatbot from "../components/Chatbot";
 import { useLocation } from "react-router-dom";
 
 const Dashboard = () => {
-  const { state } = useLocation(); // Use state passed via navigate
-  const { firstName, lastName, institute, selectedCourse } = state;
+  const { state } = useLocation(); // Retrieve data from navigate
+  const { firstName, lastName, institute, course } = state || {};
   return (
     <>
       <div
@@ -606,7 +606,7 @@ const Dashboard = () => {
                         }
                       `}
                     >
-                      Course name
+                      {course}
                     </div>
                   </div>
                   <div
