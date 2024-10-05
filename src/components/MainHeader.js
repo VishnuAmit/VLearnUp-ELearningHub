@@ -74,11 +74,12 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import LoginScreen from "../pages/LoginScreen"; // Adjust the path as necessary
 import SignUpScreen from "../pages/SignUpScreen"; // Adjust the path as necessary
+import { useEffect } from "react";
 
 Modal.setAppElement("#root"); // Set your app element for accessibility
 
 
-const MainHeader = ({coursesRef,articleRef,featuresRef,exploreRef,aboutRef,className = "" }) => {
+const MainHeader = ({coursesRef,articleRef,featuresRef,exploreRef,aboutRef,className = "" , refreshDate }) => {
   const [showLogin, setShowLogin] = useState(false);
   const [showSignUp, setShowSignUp] = useState(false);
 
@@ -100,7 +101,9 @@ const MainHeader = ({coursesRef,articleRef,featuresRef,exploreRef,aboutRef,class
     setShowSignUp(true);
 
   };
-
+  useEffect(()=>{
+    refreshDate && setShowSignUp(true);
+  },[refreshDate])
   return (
     <>
       <header
