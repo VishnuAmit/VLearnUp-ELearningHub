@@ -9,19 +9,6 @@ function CourseInputModal({ isOpen, onClose, onSubmit }) {
     onClose();
   };
 
-  // Disable scrolling when modal is open
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto'; // Restore scrolling when modal is closed
-    }
-
-    return () => {
-      document.body.style.overflow = 'auto'; // Cleanup to ensure scrolling is restored
-    };
-  }, [isOpen]);
-
   if (!isOpen) return null;
 
   return (
@@ -39,7 +26,7 @@ function CourseInputModal({ isOpen, onClose, onSubmit }) {
             placeholder="Enter course name"
             required
           />
-        </div>  
+        </div>
         <div className="modal-footer">
           <button className="submit-button" onClick={handleSubmit}>Submit Course</button>
           <button className="close-button" onClick={onClose}>Cancel</button>
