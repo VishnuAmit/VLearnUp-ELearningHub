@@ -1,0 +1,72 @@
+.modal-overlay {
+  position: fixed;            
+  top: 0;                     
+  left: 0;                    
+  right: 0;                   
+  bottom: 0;                  
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;              
+  justify-content: center;     
+  align-items: center;        
+  z-index: 1000;             
+}
+
+.modal-content {
+  background-color: #fff;    
+  padding: 20px;             
+  border-radius: 8px;        
+  width: 90%;                 
+  max-width: 500px;          
+  height: auto;              
+  max-height: calc(100vh - 40px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.input-container {
+  margin: 10px 0;            
+}
+
+.input-label {
+  display: block;             
+  margin-bottom: 5px; 
+}
+
+.course-input {
+  width: 100%;                
+  padding: 10px;             
+  border: 1px solid #ccc;    
+  border-radius: 4px;        
+}
+
+.course-input:focus {
+  border-color: #888;        
+}
+
+.modal-footer {
+  display: flex;              
+  justify-content: flex-end;  
+}
+
+.submit-button {
+  background-color: #272525;  
+  color: white;               
+  border: none;               
+  padding: 10px 20px;        
+  border-radius: 4px;        
+  cursor: pointer;            
+  margin-right: 10px;        
+}
+
+.submit-button:hover {
+  background-color: #777;     
+}
+
+.close-button {
+  background: none;          
+  border: 1px solid #555;    
+  color: #555;               
+  padding: 10px 20px;        
+  border-radius: 4px;        
+  cursor: pointer;            
+}
+  
