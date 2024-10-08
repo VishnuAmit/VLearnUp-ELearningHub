@@ -105,7 +105,7 @@ const LatestUpdates = forwardRef(({ className = "" }, ref) => {
                 <b className="self-stretch relative tracking-[0.02em] leading-[180%] mq450:text-base mq450:leading-[29px]">
                   {articles[0].description}
                 </b>
-                <b className="relative [text-decoration:underline] tracking-[0.02em] leading-[180%] inline-block min-w-[116px] z-[1] mt-[-28px] mq450:text-base mq450:leading-[29px] bottom mt-4">
+                <b className="relative [text-decoration:underline] tracking-[0.02em] leading-[180%] inline-block min-w-[116px] z-[1] mq450:text-base mq450:leading-[29px] bottom mt-4">
                   <a href={articles[0].url}>Read More...</a>
                 </b>
               </div>
@@ -113,111 +113,111 @@ const LatestUpdates = forwardRef(({ className = "" }, ref) => {
           </div>
           <div className="flex-1 flex flex-row items-start justify-start gap-[40px] min-w-[518px] max-w-full text-lg mq450:gap-[20px] mq850:flex-wrap mq850:min-w-full">
             <div className="w-[280px] flex flex-col items-start justify-start gap-[50px] min-w-[280px] mq450:gap-[25px] mq850:flex-1">
-              <div className="self-stretch rounded-xl flex flex-row items-start justify-end pt-[146px] px-5 pb-5 relative bg-[url('/public/press-items@3x.png')] bg-cover bg-no-repeat bg-[top]">
-                <img
-                  className="h-[200px] w-[280px] relative rounded-xl object-cover hidden z-[0]"
-                  alt=""
-                  src="/rectangle-331@2x.png"
-                />
-                <img
-                  className="h-full w-full absolute !m-[0] top-[0px] right-[0px] bottom-[0px] left-[0px] rounded-xl max-w-full overflow-hidden max-h-full object-cover z-[1]"
-                  loading="lazy"
-                  alt={articles[1].title}
-                  src={articles[1].urlToImage || "/image-17@2x.png"}
-                />
-                <div className="rounded-61xl bg-lightseagreen flex flex-row items-start justify-start pt-1 pb-0.5 pr-1 pl-3 whitespace-nowrap z-[2]">
-                  <div className="h-[34px] w-[154px] relative rounded-61xl bg-lightseagreen hidden" />
-                  <b className="relative tracking-[0.02em] z-[1]">
-                    {articles[1].source.name}
+              <div className="flex flex-row gap-[24px] mq850:flex-col mq850:w-full">
+                <div className="self-stretch min-w-[280px] rounded-xl flex flex-row items-start justify-end pt-[146px] px-5 pb-5 relative bg-[url('/public/press-items@3x.png')] bg-cover bg-no-repeat bg-[top]">
+                  <img
+                    className="h-[200px] w-[280px] relative rounded-xl object-cover hidden z-[0]"
+                    alt=""
+                    src="/rectangle-331@2x.png"
+                  />
+                  <img
+                    className="h-full w-full absolute !m-[0] top-[0px] right-[0px] bottom-[0px] left-[0px] rounded-xl max-w-full overflow-hidden max-h-full object-cover z-[1]"
+                    loading="lazy"
+                    alt={articles[1].title}
+                    src={articles[1].urlToImage || "/image-17@2x.png"}
+                  />
+                  <div className="rounded-61xl bg-lightseagreen flex flex-row items-start justify-start pt-1 pb-0.5 pr-1 pl-3 whitespace-nowrap z-[2]">
+                    <div className="h-[34px] w-[154px] relative rounded-61xl bg-lightseagreen hidden" />
+                    <b className="relative tracking-[0.02em] z-[1]">
+                      {articles[1].source.name}
+                    </b>
+                  </div>
+                </div>
+                <div className="self-stretch flex flex-col items-start justify-start gap-[20px] max-w-full">
+                  <b className="self-stretch relative leading-[180%] mq450:text-lg mq450:leading-[32px]">
+                    <a
+                      className="text-gray-100 no-underline"
+                      href={articles[1].url}
+                    >
+                      {truncateTitle(articles[1].title)}
+                    </a>
+                  </b>
+                  <b className="w-[447px] relative text-xl tracking-[0.02em] leading-[180%] inline-block text-slategray-100 max-w-full mq450:text-base mq450:leading-[29px]">
+                    {truncateDescription(articles[1].description)}
                   </b>
                 </div>
               </div>
-              <div className="self-stretch rounded-xl flex flex-row items-start justify-end pt-[146px] px-5 pb-5 relative bg-[url('/public/rectangle-341@2x.png')] bg-cover bg-no-repeat bg-[top]">
-                <img
-                  className="h-[200px] w-[280px] relative rounded-xl object-cover hidden z-[0]"
-                  alt=""
-                  src="/rectangle-341@2x.png"
-                />
-                <div className="h-full w-full absolute !m-[0] top-[0px] right-[0px] bottom-[0px] left-[0px]">
-                  <div className="absolute h-full w-full top-[0px] right-[0px] bottom-[0px] left-[0px] rounded-xl bg-darkslateblue-500 z-[1]" />
+              <div className="flex flex-row gap-[24px] mq850:flex-col mq850:w-full">
+                <div className="self-stretch min-w-[280px] rounded-xl flex flex-row items-start justify-end pt-[146px] px-5 pb-5 relative bg-[url('/public/press-items@3x.png')] bg-cover bg-no-repeat bg-[top]">
                   <img
-                    className="absolute h-full w-full top-[0px] right-[0px] bottom-[0px] left-[0px] rounded-xl max-w-full overflow-hidden max-h-full object-cover z-[2]"
-                    loading="lazy"
+                    className="h-[200px] w-[280px] relative rounded-xl object-cover hidden z-[0]"
                     alt=""
-                    src="/image-18@2x.png"
+                    src="/rectangle-331@2x.png"
                   />
+                  <img
+                    className="h-full w-full absolute !m-[0] top-[0px] right-[0px] bottom-[0px] left-[0px] rounded-xl max-w-full overflow-hidden max-h-full object-cover z-[1]"
+                    loading="lazy"
+                    alt={articles[2].title}
+                    src={articles[2].urlToImage || "/image-17@2x.png"}
+                  />
+                  <div className="rounded-61xl bg-lightseagreen flex flex-row items-start justify-start pt-1 pb-0.5 pr-1 pl-3 whitespace-nowrap z-[2]">
+                    <div className="h-[34px] w-[154px] relative rounded-61xl bg-lightseagreen hidden" />
+                    <b className="relative tracking-[0.02em] z-[1]">
+                      {articles[2].source.name}
+                    </b>
+                  </div>
                 </div>
-                <div className="rounded-61xl bg-lightseagreen flex flex-row items-start justify-start pt-1 pb-[3px] pr-[19px] pl-[26px] z-[3]">
-                  <div className="h-[34px] w-[100px] relative rounded-61xl bg-lightseagreen hidden" />
-                  <b className="relative tracking-[0.02em] inline-block min-w-[55px] z-[1]">
-                    {articles[2].source.name}
+                <div className="self-stretch flex flex-col items-start justify-start gap-[20px] max-w-full">
+                  <b className="self-stretch relative leading-[180%] mq450:text-lg mq450:leading-[32px]">
+                    <a
+                      href={articles[2].url}
+                      className="text-gray-100 no-underline"
+                    >
+                      {truncateTitle(articles[2].title)}
+                    </a>
+                  </b>
+                  <b className="w-[447px] relative text-xl tracking-[0.02em] leading-[180%] inline-block text-slategray-100 max-w-full mq450:text-base mq450:leading-[29px]">
+                    {truncateDescription(articles[2].description)}
                   </b>
                 </div>
               </div>
-              <div className="self-stretch flex flex-row items-start justify-end pt-[146px] px-5 pb-5 relative">
-                <div className="h-full w-full absolute !m-[0] top-[0px] right-[0px] bottom-[0px] left-[0px]">
+              <div className="flex flex-row gap-[24px] mq850:flex-col mq850:w-full">
+                <div className="self-stretch min-w-[280px] rounded-xl flex flex-row items-start justify-end pt-[146px] px-5 pb-5 relative bg-[url('/public/press-items@3x.png')] bg-cover bg-no-repeat bg-[top]">
                   <img
-                    className="absolute h-full w-full top-[0px] right-[0px] bottom-[0px] left-[0px] rounded-xl max-w-full overflow-hidden max-h-full object-cover"
+                    className="h-[200px] w-[280px] relative rounded-xl object-cover hidden z-[0]"
                     alt=""
-                    src="/single-image@2x.png"
+                    src="/rectangle-331@2x.png"
                   />
-                  <div className="absolute h-full w-full top-[0px] right-[0px] bottom-[0px] left-[0px] rounded-xl bg-darkslateblue-500 z-[1]" />
                   <img
-                    className="absolute h-full w-full top-[0px] right-[0px] bottom-[0px] left-[0px] rounded-xl max-w-full overflow-hidden max-h-full object-cover z-[2]"
+                    className="h-full w-full absolute !m-[0] top-[0px] right-[0px] bottom-[0px] left-[0px] rounded-xl max-w-full overflow-hidden max-h-full object-cover z-[1]"
                     loading="lazy"
-                    alt=""
-                    src={articles[3].urlToImage || "/image-19@2x.png"}
+                    alt={articles[3].title}
+                    src={articles[3].urlToImage || "/image-17@2x.png"}
                   />
+                  <div className="rounded-61xl bg-lightseagreen flex flex-row items-start justify-start pt-1 pb-0.5 pr-1 pl-3 whitespace-nowrap z-[2]">
+                    <div className="h-[34px] w-[154px] relative rounded-61xl bg-lightseagreen hidden" />
+                    <b className="relative tracking-[0.02em] z-[1]">
+                      {articles[3].source.name}
+                    </b>
+                  </div>
                 </div>
-                <div className="rounded-61xl bg-lightseagreen flex flex-row items-start justify-start pt-1 pb-[3px] pr-[19px] pl-[26px] z-[3]">
-                  <div className="h-[34px] w-[100px] relative rounded-61xl bg-lightseagreen hidden" />
-                  <b className="relative tracking-[0.02em] inline-block min-w-[55px] z-[1]">
-                    {articles[3].source.name}
+                <div className="self-stretch flex flex-col items-start justify-start gap-[20px] max-w-full">
+                  <b className="self-stretch relative leading-[180%] mq450:text-lg mq450:leading-[32px]">
+                    <a
+                      className="text-gray-100 no-underline"
+                      href={articles[3].url}
+                    >
+                      {articles[3].title}
+                    </a>
+                  </b>
+                  <b className="w-[447px] relative text-xl tracking-[0.02em] leading-[180%] inline-block text-slategray-100 max-w-full mq450:text-base mq450:leading-[29px]">
+                    {truncateDescription(articles[3].description)}
                   </b>
                 </div>
               </div>
             </div>
-            <div className="flex-1 flex flex-col items-start justify-start gap-[78px] min-w-[310px] max-w-full text-3xl text-gray-100 mq850:gap-[39px]">
-              <div className="self-stretch flex flex-col items-start justify-start gap-[20px] max-w-full">
-                <b className="self-stretch relative leading-[180%] mq450:text-lg mq450:leading-[32px]">
-                  <a
-                    className="text-gray-100 no-underline"
-                    href={articles[1].url}
-                  >
-                    {truncateTitle(articles[1].title)}
-                  </a>
-                </b>
-                <b className="w-[447px] relative text-xl tracking-[0.02em] leading-[180%] inline-block text-slategray-100 max-w-full mq450:text-base mq450:leading-[29px]">
-                  {truncateDescription(articles[1].description)}
-                </b>
-              </div>
-              <div className="self-stretch flex flex-col items-start justify-start gap-[20px] max-w-full">
-                <b className="self-stretch relative leading-[180%] mq450:text-lg mq450:leading-[32px]">
-                  <a
-                    href={articles[2].url}
-                    className="text-gray-100 no-underline"
-                  >
-                    {truncateTitle(articles[2].title)}
-                  </a>
-                </b>
-                <b className="w-[447px] relative text-xl tracking-[0.02em] leading-[180%] inline-block text-slategray-100 max-w-full mq450:text-base mq450:leading-[29px]">
-                  {truncateDescription(articles[2].description)}
-                </b>
-              </div>
-              <div className="self-stretch flex flex-col items-start justify-start gap-[20px] max-w-full">
-                <b className="self-stretch relative leading-[180%] mq450:text-lg mq450:leading-[32px]">
-                  <a
-                    className="text-gray-100 no-underline"
-                    href={articles[3].url}
-                  >
-                    {articles[3].title}
-                  </a>
-                </b>
-                <b className="w-[447px] relative text-xl tracking-[0.02em] leading-[180%] inline-block text-slategray-100 max-w-full mq450:text-base mq450:leading-[29px]">
-                  {truncateDescription(articles[3].description)}
-                </b>
-              </div>
-            </div>
+            {/* <div className="flex-1 flex flex-col items-start justify-start gap-[78px] min-w-[310px] max-w-full text-3xl text-gray-100 mq850:gap-[39px]">
+            </div> */}
           </div>
         </div>
       </div>

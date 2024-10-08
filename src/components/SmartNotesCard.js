@@ -22,7 +22,7 @@ const SmartNotesCard = ({ className = "" }) => {
                 </b>
               </div>
             </div>
-            <div className="h-[707px] w-[697.1px] relative min-w-[697.1px] max-w-full mq850:min-w-full mq1500:flex-1">
+            <div className="h-[707px] w-[697.1px] relative min-w-[697.1px] max-w-full mq850:min-w-full m-auto">
               <div className="absolute top-[0px] left-[0px] w-[697.1px] h-[536px] flex items-center justify-center">
                 <img
                   className="w-full h-full object-contain absolute left-[12px] top-[0px] [transform:scale(1.034)]"
@@ -31,7 +31,7 @@ const SmartNotesCard = ({ className = "" }) => {
                 />
               </div>
               <img
-                className="absolute top-[81px] left-[124px] w-[523px] h-[626px] object-contain z-[1]"
+                className="relative top-[81px] left-[124px] w-[523px] h-[626px] object-contain z-[1]"
                 loading="lazy"
                 alt=""
                 src="/pngtransparentgirlusinglaptopthumbnailremovebgpreview-1-1-2@2x.png"

@@ -25,7 +25,17 @@ const FrameComponent4 = ({ className = "", componentAClicked }) => {
                   Join for free
                 </div>
               </button>
-              <div className="flex flex-col items-start justify-start pt-[22px] px-0 pb-0">
+              <div className="flex flex-row items-center justify-start gap-[20px] px-0 pb-0">
+                <div className="relative w-20 h-20 z-[1] flex items-center justify-center">
+                  <a herf="https://www.youtube.com/watch?v=gFQZgwMC1As" target="_blank">
+                    <img
+                      className="w-full h-full z-[1] object-contain relative left-[2px] top-[20px] [transform:scale(2.5)]"
+                      loading="lazy"
+                      alt=""
+                      src="/group-4.svg"
+                    />
+                  </a>
+                </div>
                 <b className="relative z-[1] mq450:text-lgi">
                   Watch how it works
                 </b>
