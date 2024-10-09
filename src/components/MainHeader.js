@@ -107,18 +107,18 @@ const MainHeader = ({coursesRef,articleRef,featuresRef,exploreRef,aboutRef,class
   return (
     <>
       <header
-        className={`self-stretch flex flex-row items-start justify-center pt-0 pb-[73px] pr-[70px] pl-5 box-border max-w-full text-left text-13xl text-white font-poppins mq1225:pr-[35px] mq1225:box-border ${className}`}
+        className={`self-stretch flex flex-row items-start justify-center pt-0 pb-[25px] pt-[25px] pr-[70px] pl-5 box-border max-w-full text-left text-13xl text-white font-poppins mq1225:pr-[35px] mq1225:box-border ${className}`}
       >
         <div className="w-[1654px] flex flex-row items-start justify-between gap-[20px] max-w-full">
           <div className="flex flex-col items-start justify-start pt-[14.8px] px-0 pb-0">
-            <a className="[text-decoration:none] relative tracking-[0.04em] font-bold text-[inherit] whitespace-nowrap z-[2]">
+            <a href="https://v-learn-up-e-learning-hub.vercel.app/" className="[text-decoration:none] relative tracking-[0.04em] font-bold text-[inherit] whitespace-nowrap z-[2]">
               VLearnUp
             </a>
           </div>
-          <div className="w-[1148px] flex flex-row items-end justify-start gap-[78px] max-w-full text-3xl mq850:gap-[19px] mq1225:gap-[39px]">
+          <div className="w-[1148px] flex flex-row items-end justify-start gap-[78px] max-w-full text-3xl mq850:gap-[19px] mq1225:gap-[39px] mq1225:flex-col mq1225:fixed mq1225:top-0">
             <div className="flex-1 flex flex-col items-start justify-end pt-0 px-0 pb-3 box-border max-w-full">
 
-              <div className="self-stretch flex flex-row items-start justify-evenly gap-[20px] mq1400:hidden">
+              <div className="self-stretch flex flex-row items-start justify-evenly gap-[20px] mq1225:flex-col">
                 
                 <button
                   className="bg-transparent cursor-pointer [text-decoration:none] relative tracking-[0.02em] font-bold text-white text-lg inline-block min-w-[83px] z-[1] hover:text-[#F48C06]"
