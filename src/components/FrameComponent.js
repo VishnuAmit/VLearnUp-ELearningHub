@@ -73,7 +73,7 @@ const FrameComponent = forwardRef(({ className = "" }, ref) => {
                 /> */}
                 <div className="absolute top-[0px] left-[0px] rounded-xl bg-darkslateblue-500 w-full h-full z-[1]" />
               </div>
-              <CoursesGrid courseType='course' courseDuration='6 months' courseTitle='Machine Learning for Developers' courseDescription='Practical introduction to machine learning, featuring a series of lessons with video lectures, interactive visualizations, and hands-on practice exercises.' courseInstructor='Manu Singh' courseActualPrice='$250' courseDiscountPrice='$210'/>
+              <CoursesGrid courseType='course' courseDuration='6 months' courseTitle='Machine Learning for Developers' courseDescription='Practical introduction to machine learning, featuring a series of lessons with video lectures, interactive visualizations.' courseInstructor='Manu Singh' courseActualPrice='$250' courseDiscountPrice='$210'/>
             </div>
             <div className="shadow-[0px_18.8px_47.08px_rgba(47,_50,_125,_0.1)] rounded-xl bg-white flex flex-col items-end justify-start pt-5 px-[18px] pb-[34.8px] box-border gap-[20px] max-w-full mq850:pb-[23px] mq850:box-border">
               <div className="w-[374px] h-[617px] relative shadow-[0px_18.8px_47.08px_rgba(47,_50,_125,_0.1)] rounded-xl bg-white hidden max-w-full" />
