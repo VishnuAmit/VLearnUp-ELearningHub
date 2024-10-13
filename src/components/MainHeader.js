@@ -126,10 +126,16 @@ const MainHeader = ({coursesRef,articleRef,featuresRef,exploreRef,aboutRef,class
         className={`self-stretch flex flex-row items-start justify-center pt-0 pb-[16px] pt-[16px] pr-[70px] pl-5 box-border max-w-full text-left text-13xl text-white font-poppins mq1225:pr-[35px] mq1225:box-border z-50 fixed t-[0px] l-[0px] w-[100%] transition-all ease-in-out mq1225:pt-[5px] mq1225:pb-[15px] bg-darkslategray ${className}`}
       >
         <div className="w-[1654px] flex flex-row items-start justify-between gap-[20px] max-w-full">
-          <div className="flex flex-col items-start justify-start pt-[8px] px-0 pb-0">
+          <div className="flex flex-col items-start justify-start pt-[8px] px-0 pb-0 relative ">
             <a href="https://v-learn-up-e-learning-hub.vercel.app/" className="[text-decoration:none] relative tracking-[0.04em] font-bold text-[inherit] whitespace-nowrap z-[2]">
               VLearnUp
             </a>
+            <img
+              className="absolute -top-[10px] -left-[32px] w-[93.8px] h-[83.2px] z-[1]"
+              loading="lazy"
+              alt=""
+              src="/group-453.svg"
+            />
           </div>
           <div className="w-[1148px] flex flex-row items-end justify-start gap-[78px] bg-transparent max-w-full text-3xl mq850:gap-[19px] mq1225:gap-[39px] items-center mq1225:flex-col mq1225:fixed mq1225:top-0 mq1225:left-0 z-2 items-center justify-center h-[100%] mq1225:bg-darkslategray overflow-hidden transition-all duration-300 ease-in-out mq1225:w-[0] navwrap">
             <div className="flex-1 flex flex-col items-start justify-end pt-0 px-0 pb-0 box-border max-w-full mq1225:flex-none">
