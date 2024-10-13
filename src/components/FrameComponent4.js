@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 const FrameComponent4 = ({ className = "", componentAClicked }) => {
   return (
     <section
-      className={`w-[1851px] flex flex-row items-start justify-end pt-0 px-[65px] pb-[136px] box-border max-w-full text-left text-35xl text-darkorange font-poppins mq850:pb-[88px] mq850:box-border mq1225:pl-8 mq1225:pr-8 mq1225:box-border ${className}`}
+      className={`w-[1851px] flex flex-row items-start justify-end pt-[300px] px-[65px] pb-[136px] box-border max-w-full text-left text-35xl text-darkorange font-poppins mq850:pb-[88px] mq850:box-border mq1225:pl-8 mq1225:pr-8 mq1225:box-border ${className}`}
     >
       <div className="flex-1 flex flex-row items-start justify-center gap-[62px] max-w-full mq450:gap-[15px] mq850:gap-[31px] mq1500:flex-wrap">
         <div className="w-[681px] flex flex-col items-start justify-start gap-[34px] min-w-[681px] max-w-full mq850:gap-[17px] mq1225:min-w-full mq1500:flex-1">

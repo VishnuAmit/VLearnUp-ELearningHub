@@ -11,6 +11,7 @@ html, body, #root {
   height: 100%;
   width: 100%;
   margin: 0;
+  scrollbar-width: none;
 }
 
 body {
@@ -24,11 +25,13 @@ body {
 }
 
 .app-scale {
-  transform: scale(0.8); /* Scale down to 80% */
-  transform-origin: top left; /* Make sure scaling is from the top-left corner */
+  /* height: 100vh; */
+  transform: scale(0.8); 
+  /* Scale down to 80% */
+  transform-origin: top left; 
+  /* Make sure scaling is from the top-left corner */
   width: 125%; /* Adjust width to accommodate scaling */
-  height: 125%; /* Adjust height to accommodate scaling */
-
+  height: 125vh; /* Adjust height to accommodate scaling */
 }
 
 /* index.css or App.css */
