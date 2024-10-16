@@ -24,7 +24,7 @@ const ELearning = () => {
   
   const componentAClicked = () => setRefreshDate(new Date())
   return (
-    <div className="w-full items-center relative bg-white overflow-hidden flex flex-col items-end justify-start px-0 pb-0 box-border gap-[160px] leading-[normal] tracking-[normal] mq850:gap-[40px] mq1225:gap-[80px]">
+    <div className="w-full items-center relative bg-white overflow-hidden flex flex-col items-end justify-start px-0 pb-0 box-border gap-[160px] leading-[normal] tracking-[normal] mq850:gap-[40px] mq1225:gap-[80px] overflow-y-scroll " style={{height: "125vh",scrollbarWidth: "none"}}>
       <MainHeader  refreshDate={refreshDate}
       coursesRef={coursesRef}
       articleRef={articleRef}
@@ -74,12 +74,7 @@ const ELearning = () => {
       <FrameComponent ref={coursesRef}/>
       <Testimonials />
       <LatestUpdates ref={articleRef}/>
-      <section className="w-full flex justify-center h-[1130px] absolute !m-[0] top-[0px] right-[0px] left-[0px]">
-        <img
-          className="absolute top-[-230px] left-[-98px] w-[2196.5px] h-[1360px]"
-          alt=""
-          src="/footer-top-shape.svg"
-        />
+      <section className="w-full flex justify-center h-[1130px] absolute !m-[0] top-[0px] right-[0px] left-[0px] bg-darkslategray">
         <div className="relative top-[104px] left-[477px] w-[845px] max-w-[845px  ] h-[1026px] bg-[url('/public/pngtransparentgirlusinglaptopthumbnailremovebgpreview-1-1-1@2x.png')] bg-cover bg-no-repeat bg-[top] z-[3]">
           <img
             className="absolute top-[0px] left-[0px] w-full h-full object-cover hidden"
@@ -95,12 +90,6 @@ const ELearning = () => {
             />
           </div>
         </div>
-        <img
-          className="absolute top-[50px] left-[74px] w-[93.8px] h-[83.2px] z-[1]"
-          loading="lazy"
-          alt=""
-          src="/group-453.svg"
-        />
       </section>
       <Footer />
     </div>

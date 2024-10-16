@@ -79,6 +79,22 @@ import { useEffect } from "react";
 Modal.setAppElement("#root"); // Set your app element for accessibility
 
 
+function ToggleHeader(){
+  const bar1 = document.querySelector("header .bar1");
+  const bar2 = document.querySelector("header .bar2");
+  const bar3 = document.querySelector("header .bar3");
+  const navwrap = document.querySelector("header .navwrap");
+  navwrap.classList.toggle("w-[125vw]");
+  navwrap.classList.toggle("mq1225:w-[0]");
+  bar1.classList.toggle("rotate-45");
+  bar1.classList.toggle("-translate-x-[10px]");
+  bar1.classList.toggle("translate-y-[8px]");
+  bar2.classList.toggle("opacity-0");
+  bar3.classList.toggle("-rotate-45");
+  bar3.classList.toggle("-translate-x-[10px]");
+  bar3.classList.toggle("-translate-y-[16px]");
+};
+
 const MainHeader = ({coursesRef,articleRef,featuresRef,exploreRef,aboutRef,className = "" , refreshDate }) => {
   const [showLogin, setShowLogin] = useState(false);
   const [showSignUp, setShowSignUp] = useState(false);
@@ -107,28 +123,34 @@ const MainHeader = ({coursesRef,articleRef,featuresRef,exploreRef,aboutRef,class
   return (
     <>
       <header
-        className={`self-stretch flex flex-row items-start justify-center pt-0 pb-[25px] pt-[25px] pr-[70px] pl-5 box-border max-w-full text-left text-13xl text-white font-poppins mq1225:pr-[35px] mq1225:box-border ${className}`}
+        className={`self-stretch flex flex-row items-start justify-center pt-0 pb-[16px] pt-[16px] pr-[70px] pl-5 box-border max-w-full text-left text-13xl text-white font-poppins mq1225:pr-[35px] mq1225:box-border z-50 fixed t-[0px] l-[0px] w-[100%] transition-all ease-in-out mq1225:pt-[5px] mq1225:pb-[15px] bg-darkslategray ${className}`}
       >
         <div className="w-[1654px] flex flex-row items-start justify-between gap-[20px] max-w-full">
-          <div className="flex flex-col items-start justify-start pt-[14.8px] px-0 pb-0">
+          <div className="flex flex-col items-start justify-start pt-[8px] px-0 pb-0 relative ">
             <a href="https://v-learn-up-e-learning-hub.vercel.app/" className="[text-decoration:none] relative tracking-[0.04em] font-bold text-[inherit] whitespace-nowrap z-[2]">
               VLearnUp
             </a>
+            <img
+              className="absolute -top-[10px] -left-[32px] w-[93.8px] h-[83.2px] z-[1]"
+              loading="lazy"
+              alt=""
+              src="/group-453.svg"
+            />
           </div>
-          <div className="w-[1148px] flex flex-row items-end justify-start gap-[78px] max-w-full text-3xl mq850:gap-[19px] mq1225:gap-[39px] mq1225:flex-col mq1225:fixed mq1225:top-0">
-            <div className="flex-1 flex flex-col items-start justify-end pt-0 px-0 pb-3 box-border max-w-full">
+          <div className="w-[1148px] flex flex-row items-end justify-start gap-[78px] bg-transparent max-w-full text-3xl mq850:gap-[19px] mq1225:gap-[39px] items-center mq1225:flex-col mq1225:fixed mq1225:top-0 mq1225:left-0 z-2 items-center justify-center h-[100%] mq1225:bg-darkslategray overflow-hidden transition-all duration-300 ease-in-out mq1225:w-[0] navwrap">
+            <div className="flex-1 flex flex-col items-start justify-end pt-0 px-0 pb-0 box-border max-w-full mq1225:flex-none">
 
-              <div className="self-stretch flex flex-row items-start justify-evenly gap-[20px] mq1225:flex-col">
+              <div className="self-stretch flex flex-row items-start justify-center items-center gap-[20px] mq1225:flex-col mq850:gap-[26px]">
                 
                 <button
-                  className="bg-transparent cursor-pointer [text-decoration:none] relative tracking-[0.02em] font-bold text-white text-lg inline-block min-w-[83px] z-[1] hover:text-[#F48C06]"
+                  className="bg-transparent cursor-pointer [text-decoration:none] relative tracking-[0.02em] font-bold text-white text-lg inline-block min-w-[83px] z-[1] hover:text-[#F48C06] mq1225:text-13xl"
                   onClick={() => handleScrollToSection(coursesRef)}
                 >
                 Courses
                 </button>
 
                 <button
-                  className=" bg-transparent cursor-pointer [text-decoration:none] relative tracking-[0.02em] font-bold text-white text-lg inline-block min-w-[83px] z-[1] hover:text-[#F48C06]"
+                  className=" bg-transparent cursor-pointer [text-decoration:none] relative tracking-[0.02em] font-bold text-white text-lg inline-block min-w-[83px] z-[1] hover:text-[#F48C06] mq1225:text-13xl"
                   onClick={() => handleScrollToSection(articleRef)}
                 >
                   Article
@@ -136,7 +158,7 @@ const MainHeader = ({coursesRef,articleRef,featuresRef,exploreRef,aboutRef,class
                 </button>
 
                 <button
-                  className=" bg-transparent cursor-pointer [text-decoration:none] relative tracking-[0.02em] font-bold text-white text-lg inline-block min-w-[83px] z-[1] hover:text-[#F48C06]"
+                  className=" bg-transparent cursor-pointer [text-decoration:none] relative tracking-[0.02em] font-bold text-white text-lg inline-block min-w-[83px] z-[1] hover:text-[#F48C06] mq1225:text-13xl"
                   onClick={() => handleScrollToSection(exploreRef)}
                 >
                   Explore
@@ -144,7 +166,7 @@ const MainHeader = ({coursesRef,articleRef,featuresRef,exploreRef,aboutRef,class
                 </button>
 
                 <button
-                  className=" bg-transparent cursor-pointer [text-decoration:none] relative tracking-[0.02em] font-bold text-white text-lg inline-block min-w-[83px] z-[1] hover:text-[#F48C06]"
+                  className=" bg-transparent cursor-pointer [text-decoration:none] relative tracking-[0.02em] font-bold text-white text-lg inline-block min-w-[83px] z-[1] hover:text-[#F48C06] mq1225:text-13xl"
                   onClick={() => handleScrollToSection(aboutRef)}
                 >
                  About Us
@@ -152,7 +174,7 @@ const MainHeader = ({coursesRef,articleRef,featuresRef,exploreRef,aboutRef,class
                 </button>
               </div>
             </div>
-            <div className="flex flex-row items-start justify-start gap-[26px] max-w-full">
+            <div className="flex flex-row items-start justify-start gap-[26px] max-w-full mq850:flex-col">
               <button
                 className="cursor-pointer [border:none] pt-[13px] pb-3.5 pr-[47px] pl-[50px] bg-[transparent] shadow-[0px_20px_24px_rgba(0,_0,_0,_0.03)] rounded-mini [background:conic-gradient(from_90deg_at_50%_50%,_#fff_0deg,_#fff_360deg)] flex flex-row items-start justify-start z-[4]"
                 onClick={handleLoginClick}
@@ -172,6 +194,11 @@ const MainHeader = ({coursesRef,articleRef,featuresRef,exploreRef,aboutRef,class
               </div>
             </div>
           </div>
+        </div>
+        <div className="h-[40px] w-[40px] hidden flex-col right-[24px] top-[20px] gap-[8px] items-center justify-center absolute mq1225:flex" onClick={ToggleHeader}>
+          <span className="flex w-[100%] h-[4px] bg-white rounded-lg transition-all duration-300 ease bar1"></span>
+          <span className="flex w-[100%] h-[4px] bg-white rounded-lg transition-all duration-300 ease bar2"></span>
+          <span className="flex w-[100%] h-[4px] bg-white rounded-lg transition-all duration-300 ease bar3"></span>
         </div>
       </header>
       <Modal
