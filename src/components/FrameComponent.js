@@ -2,19 +2,30 @@ import CoursesGrid from "./CoursesGrid";
 import FrameComponent1 from "./FrameComponent1";
 import PropTypes from "prop-types";
 import { forwardRef } from "react";
+import { useNavigate, Link} from "react-router-dom";
+
 const FrameComponent = forwardRef(({ className = "" }, ref) => {
+
+  const navigate = useNavigate();
+
+  const handleSeeAllCoursesClick = () =>{
+    navigate("/see-all-courses");
+  };
+
+
   return (
     <section ref={ref}
       className={`self-stretch flex flex-row items-start justify-center pt-0 pb-[165px] pr-5 pl-[21px] box-border max-w-full text-left text-11xl text-black font-poppins mq450:pb-[70px] mq450:box-border mq1225:pb-[107px] mq1225:box-border ${className}`}
     >
       <div className="w-[1711px] flex flex-col items-start justify-start gap-[47px] max-w-full mq850:gap-[23px]">
-        <div className="self-stretch flex flex-row items-start justify-between gap-[20px] mq450:flex-wrap">
-          <h3 className="m-0 relative text-inherit tracking-[0.02em] font-bold font-inherit mq450:text-lg mq850:text-5xl">
+        <div className="self-stretch flex flex-row items-center justify-between gap-[20px] px-8 mq450:flex-wrap">
+          <h3 className="m-0 relative text-4xl tracking-[0.02em] font-bold font-inherit mq450:text-2xl mq850:text-3xl">
             Explore Courses
           </h3>
-          <div className="flex flex-col items-start justify-start pt-[18px] px-0 pb-0 text-xl text-orange">
-            <b className="relative inline-block min-w-[67px] mq450:text-base">
-              See all
+          <div className="flex flex-col items-start justify-start pt-[18px] px-0 pb-0 text-xl text-orange cursor-pointer" 
+            onClick={handleSeeAllCoursesClick}>
+            <b className="relative inline-block min-w-[67px] mq450:text-xl">
+              <Link to='/see-all-courses'>See All</Link>
             </b>
           </div>
         </div>
