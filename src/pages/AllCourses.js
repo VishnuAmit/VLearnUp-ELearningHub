@@ -6,6 +6,8 @@ function AllCourses(){
         <center>
         <h1 className='display-1'> All Courses</h1>
         </center>
+        <div className="w-[1680px] flex flex-row items-start justify-start py-0 px-[17px] box-border max-w-full text-sm text-slategray-100">
+        <div className="flex-1 grid flex-row items-start justify-start gap-[50px] max-w-full grid-cols-[repeat(4,_minmax(280px,_1fr))] mq850:gap-[25px] mq850:grid-cols-[minmax(280px,_1fr)] mq1500:justify-center mq1500:grid-cols-[repeat(2,_minmax(280px,_486px))]">
         <div className="shadow-[0px_18.8px_47.08px_rgba(47,_50,_125,_0.1)] rounded-xl bg-white flex flex-col items-end justify-start pt-5 px-[18px] pb-[34.8px] box-border gap-[20px] max-w-full mq850:pb-[23px] mq850:box-border">
               <div className="w-[374px] h-[617px] relative shadow-[0px_18.8px_47.08px_rgba(47,_50,_125,_0.1)] rounded-xl bg-white hidden max-w-full" />
               <div className="self-stretch flex flex-row items-start justify-start relative max-w-full">
@@ -14,7 +16,7 @@ function AllCourses(){
                     className="absolute top-[0px] left-[0px] w-full h-full object-cover z-[1]"
                     loading="lazy"
                     alt=""
-                    src="/aws.jfif"
+                    src="./course.jfif"
                   />
                 </div>
               </div>
@@ -28,7 +30,7 @@ function AllCourses(){
                     className="absolute top-[0px] left-[0px] w-full h-full object-cover z-[1]"
                     loading="lazy"
                     alt=""
-                    src="/ui-ux.webp"
+                    src="./course.jfif"
                   />
                 </div>
               </div>
@@ -42,7 +44,7 @@ function AllCourses(){
                     className="absolute top-[0px] left-[0px] w-full h-full object-cover z-[1]"
                     loading="lazy"
                     alt=""
-                    src="/frontend.png"
+                    src="./course.jfif"
                   />
                 </div>
               </div>
@@ -56,7 +58,7 @@ function AllCourses(){
                     className="absolute top-[0px] left-[0px] w-full h-full object-cover z-[1]"
                     loading="lazy"
                     alt=""
-                    src="/ml.png"
+                    src="./course.jfif"
                   />
                 </div>
               </div>
@@ -73,7 +75,7 @@ function AllCourses(){
                     className="absolute top-[0px] left-[0px] w-full h-full object-cover z-[1]"
                     loading="lazy"
                     alt=""
-                    src=""
+                    src="./course.jfif"
                   />
                 </div>
               </div>
@@ -88,11 +90,11 @@ function AllCourses(){
                     className="absolute top-[0px] left-[0px] w-full h-full object-cover z-[1]"
                     loading="lazy"
                     alt=""
-                    src=""
+                    src="./course.jfif"
                   />
                 </div>
               </div>
-              <CoursesGrid courseType='course' courseDuration='8 months' courseTitle='Introduction to Java Backend Development' courseDescription='This course teaches students how to build web applications using the Java programming language and frameworks like Spring Boot.' courseInstructor='Meera Joshi' courseActualPrice='$750' courseDiscountPrice='$700'/>
+              <CoursesGrid courseType='course' courseDuration='8 months' courseTitle='Backend Development' courseDescription='This course teaches students how to build web applications using the Java programming language and frameworks like Spring Boot.' courseInstructor='Meera Joshi' courseActualPrice='$750' courseDiscountPrice='$700'/>
             </div>
 
             <div className="shadow-[0px_18.8px_47.08px_rgba(47,_50,_125,_0.1)] rounded-xl bg-white flex flex-col items-end justify-start pt-5 px-[18px] pb-[34.8px] box-border gap-[20px] max-w-full mq850:pb-[23px] mq850:box-border">
@@ -103,11 +105,11 @@ function AllCourses(){
                     className="absolute top-[0px] left-[0px] w-full h-full object-cover z-[1]"
                     loading="lazy"
                     alt=""
-                    src=""
+                    src="./course.jfif"
                   />
                 </div>
               </div>
-              <CoursesGrid courseType='course' courseDuration='2 months' courseTitle='Introduction to Docker' courseDescription='This course teaches you how to deploy and manage containers, understand Docker Compose, and integrate Docker into Continuous integration and deployment workflows.' courseInstructor='Sundar Rajan' courseActualPrice='$250' courseDiscountPrice='$210'/>
+              <CoursesGrid courseType='course' courseDuration='2 months' courseTitle='Introduction to Docker' courseDescription='This course teaches you how to deploy and manage containers, understand Docker Compose.' courseInstructor='Sundar Rajan' courseActualPrice='$250' courseDiscountPrice='$210'/>
             </div>
 
             <div className="shadow-[0px_18.8px_47.08px_rgba(47,_50,_125,_0.1)] rounded-xl bg-white flex flex-col items-end justify-start pt-5 px-[18px] pb-[34.8px] box-border gap-[20px] max-w-full mq850:pb-[23px] mq850:box-border">
@@ -118,11 +120,11 @@ function AllCourses(){
                     className="absolute top-[0px] left-[0px] w-full h-full object-cover z-[1]"
                     loading="lazy"
                     alt=""
-                    src=""
+                    src="./course.jfif"
                   />
                 </div>
               </div>
-              <CoursesGrid courseType='course' courseDuration='5 months' courseTitle='Become a Devops Engineer.' courseDescription='The course can teach you about DevOps tools like Dynatrace, Nagios, Slack, Splunk, Puppet, Chef, Ansible, Jenkins, Git, GitHub, ServiceNow, Docker, Kubernetes, and Terraform.' courseInstructor='Arun Kamath' courseActualPrice='$550' courseDiscountPrice='$520'/>
+              <CoursesGrid courseType='course' courseDuration='5 months' courseTitle='Become a Devops Engineer.' courseDescription='The course can teach you about DevOps tools like Jenkins, Git, GitHub Docker, Kubernetes, and more.' courseInstructor='Arun Kamath' courseActualPrice='$550' courseDiscountPrice='$520'/>
             </div>
 
             <div className="shadow-[0px_18.8px_47.08px_rgba(47,_50,_125,_0.1)] rounded-xl bg-white flex flex-col items-end justify-start pt-5 px-[18px] pb-[34.8px] box-border gap-[20px] max-w-full mq850:pb-[23px] mq850:box-border">
@@ -133,11 +135,11 @@ function AllCourses(){
                     className="absolute top-[0px] left-[0px] w-full h-full object-cover z-[1]"
                     loading="lazy"
                     alt=""
-                    src=""
+                    src="./course.jfif"
                   />
                 </div>
               </div>
-              <CoursesGrid courseType='course' courseDuration='1 months' courseTitle='Introduction to REST API' courseDescription='This courses teach students how to use RESTful APIs to integrate applications and connect components in microservices architectures.' courseInstructor='Dennis Moris' courseActualPrice='$180' courseDiscountPrice='$150'/>
+              <CoursesGrid courseType='course' courseDuration='1 months' courseTitle='Introduction to REST API' courseDescription='This courses teaches about RESTful APIs, and integration of applications.' courseInstructor='Dennis Moris' courseActualPrice='$180' courseDiscountPrice='$150'/>
             </div>
 
             <div className="shadow-[0px_18.8px_47.08px_rgba(47,_50,_125,_0.1)] rounded-xl bg-white flex flex-col items-end justify-start pt-5 px-[18px] pb-[34.8px] box-border gap-[20px] max-w-full mq850:pb-[23px] mq850:box-border">
@@ -148,11 +150,11 @@ function AllCourses(){
                     className="absolute top-[0px] left-[0px] w-full h-full object-cover z-[1]"
                     loading="lazy"
                     alt=""
-                    src=""
+                    src="./course.jfif"
                   />
                 </div>
               </div>
-              <CoursesGrid courseType='course' courseDuration='10 months' courseTitle='Full Stack Development using Python.' courseDescription='This course teaches how to build web applications using Python, including front-end and back-end development, databases, and deployment.' courseInstructor='Lily Brian' courseActualPrice='$850' courseDiscountPrice='$820'/>
+              <CoursesGrid courseType='course' courseDuration='10 months' courseTitle='Python Development.' courseDescription='This course teaches building web applications using Python.' courseInstructor='Lily Brian' courseActualPrice='$850' courseDiscountPrice='$820'/>
             </div>
 
             <div className="shadow-[0px_18.8px_47.08px_rgba(47,_50,_125,_0.1)] rounded-xl bg-white flex flex-col items-end justify-start pt-5 px-[18px] pb-[34.8px] box-border gap-[20px] max-w-full mq850:pb-[23px] mq850:box-border">
@@ -163,13 +165,14 @@ function AllCourses(){
                     className="absolute top-[0px] left-[0px] w-full h-full object-cover z-[1]"
                     loading="lazy"
                     alt=""
-                    src=""
+                    src="./course.jfif"
                   />
                 </div>
               </div>
               <CoursesGrid courseType='course' courseDuration='1 months' courseTitle='Maven: A build management tool.' courseDescription='Learn the core concepts of Maven, including Maven life cycle phases, Maven Project Coordinates, Plugins, Goals, and Repositories.' courseInstructor='Shriranga Rao' courseActualPrice='$120' courseDiscountPrice='$100'/>
             </div>
-            
+            </div>
+            </div>
         </>
     );
 }

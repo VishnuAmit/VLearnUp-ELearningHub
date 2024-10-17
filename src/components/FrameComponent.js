@@ -39,7 +39,7 @@ const FrameComponent = forwardRef(({ className = "" }, ref) => {
                   className="absolute top-[0px] left-[0px] rounded-xl w-full h-full object-cover z-[2]"
                   loading="lazy"
                   alt=""
-                  src="/ui-ux.webp"
+                  src="course.jfif"
                 />
               </div>
               <CoursesGrid courseType='course' courseDuration='3 months' courseTitle='UI/UX Designing' courseDescription='Teaches how to create aesthetically pleasing interfaces using typography, color theory, layout, and iconography.' courseInstructor='Isa Vivian' courseActualPrice='$100' courseDiscountPrice='$80'/>
@@ -47,7 +47,7 @@ const FrameComponent = forwardRef(({ className = "" }, ref) => {
             <div className="shadow-[0px_18.8px_47.08px_rgba(47,_50,_125,_0.1)] rounded-xl bg-white flex flex-col items-end justify-start pt-5 px-4 pb-[34.8px] box-border gap-[20px] max-w-full mq850:pb-[23px] mq850:box-border">
               <div className="w-[374px] h-[617px] relative shadow-[0px_18.8px_47.08px_rgba(47,_50,_125,_0.1)] rounded-xl bg-white hidden max-w-full" />
               <div className="self-stretch h-[239px] relative z-[2]">
-                <div className="absolute top-[0px] left-[1px] rounded-xl w-full h-full bg-[url('/public/frontend.png')] bg-cover bg-no-repeat bg-[top] z-[1]">
+                <div className="absolute top-[0px] left-[1px] rounded-xl w-full h-full bg-[url('/public/course.jfif')] bg-cover bg-no-repeat bg-[top] z-[1]">
                   {/* <img
                     className="absolute top-[0px] left-[0px] rounded-xl w-full h-full object-cover hidden"
                     alt=""
@@ -76,7 +76,7 @@ const FrameComponent = forwardRef(({ className = "" }, ref) => {
             </div>
             <div className="shadow-[0px_18.8px_47.08px_rgba(47,_50,_125,_0.1)] rounded-xl bg-white flex flex-col items-end justify-start pt-5 px-[19px] pb-[34.8px] box-border gap-[20.3px] max-w-full mq850:pb-[23px] mq850:box-border">
               <div className="w-[374px] h-[617px] relative shadow-[0px_18.8px_47.08px_rgba(47,_50,_125,_0.1)] rounded-xl bg-white hidden max-w-full" />
-              <div className="self-stretch h-[238.7px] relative rounded-xl bg-[url('/public/ml.png')] bg-cover bg-no-repeat bg-[top] z-[1]">
+              <div className="self-stretch h-[238.7px] relative rounded-xl bg-[url('/public/course.jfif')] bg-cover bg-no-repeat bg-[top] z-[1]">
                 {/* <img
                   className="absolute top-[0px] left-[0px] rounded-xl w-full h-full object-cover hidden"
                   alt=""
@@ -99,7 +99,7 @@ const FrameComponent = forwardRef(({ className = "" }, ref) => {
                     className="absolute top-[0px] left-[0px] w-full h-full object-cover z-[1]"
                     loading="lazy"
                     alt=""
-                    src="/aws.jfif"
+                    src="course.jfif"
                   />
                 </div>
               </div>
