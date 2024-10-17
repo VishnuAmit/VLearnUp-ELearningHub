@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-const CoursesGrid = ({ className = "" }) => {
+const CoursesGrid = ({ className = "", courseType, courseDuration, courseTitle, courseDescription, courseInstructor, courseActualPrice, courseDiscountPrice }) => {
   return (
     <div
       className={`self-stretch flex flex-row items-start justify-end py-0 pr-[3px] pl-[11px] box-border max-w-full text-left text-sm text-slategray-100 font-poppins ${className}`}
@@ -18,7 +18,7 @@ const CoursesGrid = ({ className = "" }) => {
                 </div>
               </div>
               <b className="flex-1 relative tracking-[0.02em] leading-[22px] z-[2]">
-                Design
+                {courseType}
               </b>
             </div>
             <div className="flex flex-row items-start justify-start gap-[10px] text-5xl text-gainsboro-200 font-font-awesome-5-free">
@@ -27,20 +27,19 @@ const CoursesGrid = ({ className = "" }) => {
               </div>
               <div className="flex flex-col items-start justify-start pt-0.5 px-0 pb-0 text-sm text-slategray-100 font-poppins">
                 <b className="relative tracking-[0.02em] leading-[22px] inline-block min-w-[62px] z-[2]">
-                  3 Month
+                  {courseDuration}
                 </b>
               </div>
             </div>
           </div>
           <b className="self-stretch relative text-5xl text-gray-100 z-[1] mq450:text-lgi">
-            AWS Certified solutions Architect
+            {courseTitle}
           </b>
         </div>
         <div className="self-stretch flex flex-col items-start justify-start gap-[17px] text-lg">
-          <b className="self-stretch h-[102px] relative tracking-[0.02em] leading-[180%] inline-block shrink-0 z-[1]">
-            Lorem ipsum dolor sit amet, consectetur adipising elit, sed do
-            eiusmod tempor
-          </b>
+          <p className="self-stretch h-[102px] relative tracking-[0.02em] leading-[180%] inline-block shrink-0 z-[1]">
+            {courseDescription}
+          </p>
           <div className="self-stretch flex flex-row items-end justify-between gap-[20px] text-black mq450:flex-wrap">
             <div className="w-[113.3px] flex flex-row items-start justify-start gap-[17.8px]">
               <div className="h-[44.2px] w-[44.4px] relative rounded-[22.12px] bg-gainsboro-200 z-[1]">
@@ -53,17 +52,17 @@ const CoursesGrid = ({ className = "" }) => {
               </div>
               <div className="flex-1 flex flex-col items-start justify-start pt-[12.8px] px-0 pb-0">
                 <b className="self-stretch relative tracking-[0.02em] leading-[18.7px] z-[1]">
-                  Lina
+                  {courseInstructor}
                 </b>
               </div>
             </div>
             <div className="w-[107px] flex flex-col items-start justify-end pt-0 px-0 pb-[3.2px] box-border text-gray-400">
               <div className="self-stretch flex flex-row items-start justify-start gap-[12px]">
                 <i className="h-[19px] flex-1 relative [text-decoration:line-through] tracking-[0.02em] flex font-bold items-center z-[1]">
-                  $100
+                  {courseActualPrice}
                 </i>
                 <b className="h-[19px] relative text-5xl tracking-[0.02em] flex text-orange items-center min-w-[51px] whitespace-nowrap z-[1] mq450:text-lgi">
-                  $80
+                {courseDiscountPrice}
                 </b>
               </div>
             </div>
