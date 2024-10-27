@@ -37,7 +37,7 @@ const CoursesGrid = ({ className = "", courseType, courseDuration, courseTitle, 
           </b>
         </div>
         <div className="self-stretch flex flex-col items-start justify-start gap-[17px] text-lg">
-          <p className="self-stretch h-[102px] relative tracking-[0.02em] leading-[180%] inline-block shrink-0 z-[1]">
+          <p className="self-stretch h-[170px] relative tracking-[0.02em] leading-[180%] inline-block shrink-0 z-[1]">
             {courseDescription}
           </p>
           <div className="self-stretch flex flex-row items-end justify-between gap-[20px] text-black mq450:flex-wrap">
