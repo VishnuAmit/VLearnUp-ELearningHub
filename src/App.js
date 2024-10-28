@@ -144,6 +144,8 @@ import '@syncfusion/ej2-react-pdfviewer/styles/material.css';
 import Profeature2 from "./pages/profeature2";
 import Profeature3 from "./pages/profeature3";
 import AllCourses from "./pages/AllCourses";
+import AccessCodeRegisteration from "./pages/AccessCodeRegisteration";
+
 
 function App() {
   const action = useNavigationType();
@@ -198,6 +200,7 @@ function App() {
         <Route path="/profeature2" element={<Profeature2 />} />
         <Route path="/profeature3" element={<Profeature3 />} />
         <Route path="/see-all-courses" element={<AllCourses />} />
+        <Route path="/access-code-reg" element={<AccessCodeRegisteration/>} />
       </Routes>
     </div>
   );
