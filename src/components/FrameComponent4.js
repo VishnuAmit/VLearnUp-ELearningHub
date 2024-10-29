@@ -27,7 +27,7 @@ const FrameComponent4 = ({ className = "", componentAClicked }) => {
               </button>
               <div className="flex flex-row items-center justify-start gap-[20px] px-0 pb-0">
                 <div className="relative w-20 h-20 z-[1] flex items-center justify-center">
-                  <a herf="https://www.youtube.com/watch?v=gFQZgwMC1As" target="_blank">
+                <a href="https://www.youtube.com/watch?v=M9w5wW7n_MY" target="_blank">
                     <img
                       className="w-full h-full z-[1] object-contain relative left-[2px] top-[20px] [transform:scale(2.5)]"
                       loading="lazy"
@@ -37,7 +37,9 @@ const FrameComponent4 = ({ className = "", componentAClicked }) => {
                   </a>
                 </div>
                 <b className="relative z-[1] mq450:text-lgi">
+                  <a href="https://www.youtube.com/watch?v=M9w5wW7n_MY" target="_blank" className="text-white no-underline">
                   Watch how it works
+                  </a>
                 </b>
               </div>
             </div>
