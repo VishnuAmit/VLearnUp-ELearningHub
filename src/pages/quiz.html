@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Dynamic Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .quiz-container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .question {
+      margin-bottom: 20px;
+    }
+
+    .question-text {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .options {
+      list-style: none;
+      padding: 0;
+    }
+
+    .options li {
+      margin-bottom: 10px;
+    }
+
+    .options input[type="radio"] {
+      margin-right: 5px;
+    }
+
+    .buttons {
+      margin-top: 20px;
+    }
+
+    .buttons button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .buttons button:hover {
+      background-color: #ddd;
+    }
+
+    .buttons button.next {
+      background-color: #4CAF50;
+      color: #fff;
+    }
+
+    .buttons button.submit {
+      background-color: #008CBA;
+      color: #fff;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 10px;
+      background-color: #ddd;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background-color: #4CAF50;
+      width: 0%;
+      transition: width 0.5s ease;
+    }
+
+    .message {
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .message.correct {
+      background-color: #4CAF50;
+      color: #fff;
+    }
+
+    .message.incorrect {
+      background-color: #f44336;
+      color: #fff;
+    }
+
+    .explanation {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <div class="progress-bar">
+      <div class="progress-bar-fill"></div>
+    </div>
+    <div id="quiz">
+      </div>
+    <div class="buttons">
+      <button class="previous" onclick="previousQuestion()">Previous Question</button>
+      <button class="next" onclick="nextQuestion()">Next Question</button>
+      <button class="submit" onclick="submitQuiz()">Submit</button>
+    </div>
+    <div id="message" class="message"></div>
+    <div id="explanation" class="explanation"></div>
+  </div>
+
+  <script>
+    const questions = [
+      {
+        question: "Q) Explain the “this” keyword, under what assumptions does the this keyword not work?",
+        options: [
+          "Refers to the current instance of a class.",
+          "Does not work with static methods/fields.",
+          "Does not work with abstract methods/fields.",
+          "Does not work with private methods/fields."
+        ],
+        correctAnswer: 1
+      },
+      {
+        question: "Q) Explain the static keyword, what’s it for, why is it in the main function",
+        options: [
+          "Static variable: Shared among all instances.",
+          "Static method: Belongs to the class, callable without an instance.",
+          "Static block: Executes when the class is loaded.",
+          "Main function: Static to allow JVM to call it without creating an instance."
+        ],
+        correctAnswer: 3
+      },
+      {
+        question: "Q) Explain public and private what’s the concept behind them",
+        options: [
+          "Access specifiers.",
+          "Public: Accessible from anywhere.",
+          "Private: Accessible only within the declared class.",
+          "Both of the above."
+        ],
+        correctAnswer: 3
+      },
+      {
+        question: "Q) How is an output statement like system.out.println() in Java better than a statement like print in python?",
+        options: [
+          "Not necessarily better, just different.",
+          "Java provides detailed I/O libraries; output method choice depends on context and needs.",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) What is the difference between a class and instance?",
+        options: [
+          "Class: Blueprint for objects.",
+          "Instance: Concrete object created from the class.",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) What is an interface, can we implement interfaces in Java?",
+        options: [
+          "Interface: Abstract type used to specify a behavior.",
+          "Yes, we can implement interfaces.",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) Why does the main function have to be public? Why is it public static void main?",
+        options: [
+          "Public: JVM needs to access it from anywhere.",
+          "Static: Invoked without creating an instance.",
+          "Void: Does not return any value.",
+          "Main: Entry point for the program."
+        ],
+        correctAnswer: 3
+      },
+      {
+        question: "Q) Why do we need a main function in the first place as a mandatory thing in Java? Suppose we just installed Java and we want to write a hello world program, to just do that we need the class and main fn, why?",
+        options: [
+          "Main function: Entry point for execution.",
+          "Class structure enforces encapsulation and organization.",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) Name other object-oriented languages except Java",
+        options: [
+          "C++",
+          "Python",
+          "C#",
+          "All of the above"
+        ],
+        correctAnswer: 3
+      },
+      {
+        question: "Q) What is diamond inheritance?",
+        options: [
+          "Hybrid inheritance where we see Hierarchical inheritance (first) and Multiple inheritance (second). In the top half, two classes inherit from the same parent, and in the bottom half, one class inherits from both the parents.",
+          "A type of inheritance where a class can inherit from multiple parent classes.",
+          "A type of inheritance where a class can inherit from only one parent class.",
+          "None of the above."
+        ],
+        correctAnswer: 0
+      },
+      {
+        question: "Q) Give an example of polymorphism",
+        options: [
+          "Method overloading or method overriding.",
+          "A class that can have multiple forms.",
+          "A method that can take different types of arguments.",
+          "None of the above."
+        ],
+        correctAnswer: 0
+      },
+      {
+        question: "Q) What is method overloading and how is it different from method overriding. Give the syntax for both",
+        options: [
+          "Overloading: Same method name, different parameters. void display(int a) { } void display(int a, int b) { }",
+          "Overriding: Subclass provides specific implementation of a method declared in the parent class. @Override void display() { }",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) How to implement multi threading in Java? Give syntax. What is thread synchronization? What are the various thread synchronization techniques?",
+        options: [
+          "Extend `Thread` class or implement `Runnable` interface.  class MyThread extends Thread {    public void run() { }  }",
+          "Synchronization: Ensures only one thread accesses a resource at a time.    synchronized (this) { }  ",
+          "Techniques: Locks, synchronized blocks/methods, `java.util.concurrent` locks.",
+          "All of the above."
+        ],
+        correctAnswer: 3
+      },
+      {
+        question: "Q) What are constructors? How do they work?",
+        options: [
+          "Special methods to initialize objects.  MyClass() { }",
+          "Constructors are used to create new objects.",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) Explain the SOLID principles in OOPS",
+        options: [
+          "S: Single Responsibility Principle",
+          "O: Open/Closed Principle",
+          "L: Liskov Substitution Principle",
+          "I: Interface Segregation Principle"
+        ],
+        correctAnswer: 3
+      },
+      {
+        question: "Q) What are UML diagrams? Explain some",
+        options: [
+          "Visual representation of a system's architecture.",
+          "Class diagrams, sequence diagrams, use case diagrams.",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) How is exception handling done in Java? Explain try, catch, finally",
+        options: [
+          "Try: Code that may throw an exception.",
+          "Catch: Handle the exception.",
+          "Finally: Executes after try/catch, regardless of an exception. try { } catch (Exception e) { } finally { }",
+          "All of the above."
+        ],
+        correctAnswer: 3
+      },
+      {
+        question: "Q) What is garbage collection in Java and how does it work?",
+        options: [
+          "Automatic memory management.",
+          "JVM reclaims memory used by unreachable objects.",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) Can you explain what is the JVM, JRE and JDK. And give a brief description of the diagram.",
+        options: [
+          "JVM: Runs Java bytecode.",
+          "JRE: Environment to run Java applications.",
+          "JDK: Tools for developing Java applications.",
+          "All of the above."
+        ],
+        correctAnswer: 3
+      },
+      {
+        question: "Q) Explain some features of Java",
+        options: [
+          "Platform-independent",
+          "Object-oriented",
+          "Robust",
+          "Secure"
+        ],
+        correctAnswer: 3
+      },
+      {
+        question: "Q) What are the different data types supported in Java? Explain how many bits or bytes each one occupies",
+        options: [
+          "Primitive types: `byte` (1 byte), `short` (2 bytes), `int` (4 bytes), `long` (8 bytes), `float` (4 bytes), `double` (8 bytes), `char` (2 bytes), `boolean` (1 bit).",
+          "Java supports a wide range of data types, including primitive types like `byte`, `short`, `int`, `long`, `float`, `double`, `char`, and `boolean`.",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) What is an abstract class? Give me an example. What is the difference between an abstract class and an interface?",
+        options: [
+          "Abstract class: Cannot be instantiated, can have abstract and concrete methods. abstract class MyClass {    abstract void myMethod(); }", 
+          "Interface: Only abstract methods (Java 8 onwards, can have default methods).",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) What is an array list in Java? Can you explain the difference between array list and linked list?",
+        options: [
+          "ArrayList: Resizable array.",
+          "LinkedList: Doubly-linked list.",
+          "Difference: ArrayList allows random access, LinkedList is better for frequent insertions/deletions.",
+          "All of the above."
+        ],
+        correctAnswer: 3
+      },
+      {
+        question: "Q) What are some commonly used Java libraries? Java frameworks, packages?",
+        options: [
+          "JUnit",
+          "Spring",
+          "util",
+          "lang"
+        ],
+        correctAnswer: 3
+      },
+      {
+        question: "Q) What is string builder and string buffer classes? What is an enum class?",
+        options: [
+          "StringBuilder: Mutable sequence of characters, not thread-safe.",
+          "StringBuffer: Mutable sequence of characters, thread-safe.",
+          "Enum: Special class representing a group of constants.",
+          "All of the above."
+        ],
+        correctAnswer: 3
+      },
+      {
+        question: "Q) What are streams in Java?",
+        options: [
+          "Stream API: Process sequences of elements.",
+          "Streams are used to process data efficiently.",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) What is Java spring? What is Java spring boot? Differences?",
+        options: [
+          "Spring: Framework for enterprise Java applications.",
+          "Spring Boot: Simplifies Spring application setup with auto-configuration.",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) What is dependency injection and how is it used in Spring?",
+        options: [
+          "DI: Design pattern to inject dependencies.",
+          "Spring uses annotations like `@Autowired` to manage dependencies.",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) What are the common frameworks used for testing in Java?",
+        options: [
+          "JUnit",
+          "Mockito",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) What is maven? What is gradle?",
+        options: [
+          "Maven: Build automation tool using XML.",
+          "Gradle: Build automation tool using Groovy/Kotlin DSL.",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) What are constructors? How do they work? Can you implement more than one constructor in a class?",
+        options: [
+          "Special methods to initialize objects.",
+          "Yes, through constructor overloading. MyClass() { } MyClass(int a) { }",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) Explain CRUD operations and examples of each",
+        options: [
+          "Create: `INSERT INTO table_name VALUES (...)`",
+          "Read: `SELECT * FROM table_name`",
+          "Update: `UPDATE table_name SET column=value`",
+          "Delete: `DELETE FROM table_name WHERE condition`"
+        ],
+        correctAnswer: 3
+      },
+      {
+        question: "Q) Explain the ACID properties in detail",
+        options: [
+          "Atomicity: All-or-nothing transactions.",
+          "Consistency: Transactions leave the database in a valid state.",
+          "Isolation: Transactions do not interfere with each other.",
+          "Durability: Committed transactions are permanent."
+        ],
+        correctAnswer: 3
+      },
+      {
+        question: "Q) What is an SQL injection?",
+        options: [
+          "Code injection attack to manipulate or exploit databases.",
+          "A type of attack that injects malicious SQL code into a database.",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) Explain the difference between SQL and NoSQL",
+        options: [
+          "SQL: Relational databases, structured schema.",
+          "NoSQL: Non-relational, flexible schema, handles unstructured data.",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) List the different keys in databases. What is a foreign key",
+        options: [
+          "Primary Key: Unique identifier.",
+          "Foreign Key: References primary key in another table.",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) What is normalization? What are normal forms? Why do we need normalization?",
+        options: [
+          "Process of organizing data to reduce redundancy.",
+          "Normal forms: 1NF, 2NF, 3NF, BCNF.",
+          "Ensures data integrity and efficiency.",
+          "All of the above."
+        ],
+        correctAnswer: 3
+      },
+      {
+        question: "Q) What is denormalization",
+        options: [
+          "Process of combining tables to improve read performance.",
+          "The opposite of normalization.",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) Explain the conditions for 3.5NF",
+        options: [
+          "A table is in BCNF if every determinant is a candidate key.",
+          "A table is in 3.5NF if it is in 3NF and has no multi-valued dependencies.",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 0
+      },
+      {
+        question: "Q) What is a deadlock? What are some deadlock resolution methods? What is live lock? What is the difference between deadlock and circular dependency? Explain about deadlock detection, avoidance, prevention, recovery mechanisms/algorithm.",
+        options: [
+          "Deadlock: Two or more processes unable to proceed.",
+          "Resolution: Deadlock prevention, avoidance (Banker's algorithm), detection, and recovery.",
+          "Livelock: Processes keep changing states without progress.",
+          "Circular dependency is a necessary condition for deadlock."
+        ],
+        correctAnswer: 3
+      },
+      {
+        question: "Q) What is a resource allocation graph? What is a Gantt chart?",
+        options: [
+          "Resource Allocation Graph: Represents resources allocated to processes.",
+          "Gantt Chart: Visual representation of a schedule.",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) What is the difference between a process and a thread?",
+        options: [
+          "Process: Independent program in execution.",
+          "Thread: Smallest unit of a process, shares memory.",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) Explain various process states",
+        options: [
+          "New, Ready, Running, Waiting, Terminated.",
+          "Processes can be in different states throughout their execution.",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) What is context switching",
+        options: [
+          "Switching CPU from one process/thread to another.",
+          "The process of saving the state of one process and loading the state of another process.",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) What is virtual memory and how does it work?",
+        options: [
+          "Virtual memory is a memory management technique used by operating systems.",
+          "It allows a computer to temporarily increase the capacity of its main memory by using secondary memory as though it were part of the main memory.",
+          "Extends physical memory using disk storage.",
+          "All of the above."
+        ],
+        correctAnswer: 3
+      },
+      {
+        question: "Q) What are paging and segmentation?",
+        options: [
+          "Paging: memory management technique by which a computer stores and retrieves data from secondary storage for use in main memory. Memory divided into fixed-size pages.",
+          "Segmentation: Memory management technique that divides Memory divided into variable-sized segments.",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) What are the differences between physical and virtual addresses?",
+        options: [
+          "Physical Address: Actual location in memory.",
+          "Virtual Address: Address used by the process.",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) What is a critical section",
+        options: [
+          "Code segment where shared resources are accessed. To ensure deadlock avoidance no 2 processes must execute within the critical section at the same time.",
+          "A section of code that can only be executed by one process at a time.",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) What are system calls? Give me an example",
+        options: [
+          "System call is the programmatic way in which a computer program requests a service from the operating system on which it is executed.",   
+          "Eg: fork() - to create a new process, exec() - to execute a new program in the current process, exit() - to terminate current process",   
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) What is Interprocess communication? State some types",
+        options: [
+          "Mechanism for processes to communicate among each other.",
+          "Types: Message passing, Shared memory, sockets.",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) Can you explain the OSI Model and its layers?",
+        options: [
+          "Layers: Physical, Data Link, Network, Transport, Session, Presentation, Application.",
+          "The OSI Model is a conceptual framework used to understand and standardize the communication between different network systems.",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) What is the difference between TCP and UDP?",
+        options: [
+          "TCP: Connection-oriented, reliable.",
+          "UDP: Connectionless, faster but less reliable.",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) What is a subnet and how does subnetting work?",
+        options: [
+          "Subnet: Subdivision of an IP network.",
+          "Subnetting: Divides a network into smaller subnets.",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) How do switches differ from routers?",
+        options: [
+          "Switch: Connects devices in a network.",
+          "Router: Connects different networks.",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) Can you explain what a firewall is and how it works?",
+        options: [
+          "Security device that monitors and controls network traffic.",
+          "Firewalls act as a barrier between a private network and the public internet.",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) What is DNS?",
+        options: [
+          "Domain Name System: Translates domain names to IP addresses.",
+          "DNS is like a phonebook for the internet.",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) What is the difference between IPv4 and IPv6?",
+        options: [
+          "IPv4: 32-bit addresses.",
+          "IPv6: 128-bit addresses, more address space.",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "Q) What is a VPN",
+        options: [
+          "Virtual Private Network: Secures connection over the internet by encrypting data.",
+          "VPNs create a secure tunnel between your device and a server on the internet.",
+          "Both of the above.",
+          "None of the above."
+        ],
+        correctAnswer: 2
+      }
+    ];
+    let currentQuestion = 0;
+    let score = 0;
+
+    function loadQuestion() {
+      const questionData = questions[currentQuestion];
+      const quizElement = document.getElementById("quiz");
+      quizElement.innerHTML = `
+        <div class="question">
+          <div class="question-text">${questionData.question}</div>
+          <ul class="options">
+            ${questionData.options.map((option, index) => `
+              <li>
+                <input type="radio" name="answer" id="option${index + 1}" value="${index}">
+                <label for="option${index + 1}">${option}</label>
+              </li>
+            `).join('')}
+          </ul>
+        </div>
+      `;
+    }
+
+    function nextQuestion() {
+      const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+      if (selectedAnswer) {
+        const userAnswer = parseInt(selectedAnswer.value);
+        if (userAnswer === questions[currentQuestion].correctAnswer) {
+          score++;
+          displayMessage("Correct!", "green");
+        } else {
+          displayMessage("Incorrect!", "red");
+        }
+        const explanation = questions[currentQuestion].explanation || "No explanation provided.";
+        displayExplanation(explanation);
+        currentQuestion++;
+        if (currentQuestion < questions.length) {
+          loadQuestion();
+          updateProgressBar();
+        } else {
+          submitQuiz();
+        }
+      } else {
+        displayMessage("Please select an answer!", "orange");
+      }
+    }
+
+    function previousQuestion() {
+      if (currentQuestion > 0) {
+        currentQuestion--;
+        loadQuestion();
+        updateProgressBar();
+      }
+    }
+
+    function submitQuiz() {
+      const quizElement = document.getElementById("quiz");
+      quizElement.innerHTML = `
+        <h2>Your Score: ${score}/${questions.length}</h2>
+      `;
+      document.querySelector(".submit").style.display = "none";
+      document.querySelector(".next").style.display = "none";
+      document.querySelector(".previous").style.display = "none";
+    }
+
+    function displayMessage(message, color) {
+      const messageElement = document.getElementById("message");
+      messageElement.textContent = message;
+      messageElement.style.backgroundColor = color;
+    }
+
+    function displayExplanation(explanation) {
+      const explanationElement = document.getElementById("explanation");
+      explanationElement.textContent = explanation;
+    }
+
+    function updateProgressBar() {
+      const progressBarFill = document.querySelector(".progress-bar-fill");
+      const progress = (currentQuestion + 1) / questions.length * 100;
+      progressBarFill.style.width = `${progress}%`;
+    }
+
+    loadQuestion();
+    updateProgressBar();
+  </script>
+</body>
+</html>
