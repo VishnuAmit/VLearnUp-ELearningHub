@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { forwardRef, useState, useEffect } from "react";
-const apiKey = '26baffb9b3c746aaab690506bfd68df7'; // Replace with your actual NewsAPI key
+const apiKey = 'db15b4c818834ed79b593036745298cc'; // Replace with your actual NewsAPI key
 const url = `https://newsapi.org/v2/top-headlines?category=technology&apiKey=${apiKey}`;
 
 const LatestUpdates = forwardRef(({ className = "" }, ref) => {
@@ -103,7 +103,7 @@ return (
               </b>
               <b className="relative [text-decoration:underline] tracking-[0.02em] leading-[180%] inline-block min-w-[116px] z-[1] mt-[-28px] mq450:text-base mq450:leading-[29px] bottom mt-4">
                 <a href={articles[0].url}>
-                  Read More...
+                  Read more..
                 </a>
               </b>
             </div>
