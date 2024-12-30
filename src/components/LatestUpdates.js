@@ -1,11 +1,9 @@
 import PropTypes from "prop-types";
 import { forwardRef, useState, useEffect } from "react";
-const apiKey = 'db15b4c818834ed79b593036745298cc'; // Replace with your actual NewsAPI key
+const apiKey = '26baffb9b3c746aaab690506bfd68df7'; // Replace with your actual NewsAPI key
 const url = `https://newsapi.org/v2/top-headlines?category=technology&apiKey=${apiKey}`;
 
 const LatestUpdates = forwardRef(({ className = "" }, ref) => {
-  
-
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -13,18 +11,18 @@ const LatestUpdates = forwardRef(({ className = "" }, ref) => {
   // Function to fetch articles
   const fetchArticles = () => {
     fetch(url)
-      .then(response => {
+      .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         return response.json();
       })
-      .then(data => {
+      .then((data) => {
         setArticles(data.articles.slice(0, 4)); // Limit to 4 articles
         setLoading(false);
       })
-      .catch(error => {
-        console.error('Error fetching data: ', error);
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
         setError(error.message);
         setLoading(false);
       });
@@ -40,17 +38,20 @@ const LatestUpdates = forwardRef(({ className = "" }, ref) => {
     return () => clearInterval(intervalId); // Cleanup the interval on component unmount
   }, []);
   const truncateTitle = (title) => {
-    if (title.length > 74) {
+    if (title?.length > 74) {
       return `${title.substring(0, 74)}...`; // Truncate to 72 characters currently hardcoded
     }
     return title;
   };
 
   const truncateDescription = (description) => {
-    if (description.length > 72) {
+    if (description?.length > 72) {
       return `${description.substring(0, 72)}...`; // Truncate to 72 characters currently hardcoded
-    } else if (description.length < 38) {
-      return `${description.substring(0,description.length - 1)} ` + `${'\u00a0'.repeat(25)}` //If the description is less than one line then append a blank line to maintain the alignment.
+    } else if (description?.length < 38) {
+      return (
+        `${description.substring(0, description.length - 1)} ` +
+        `${"\u00a0".repeat(25)}`
+      ); //If the description is less than one line then append a blank line to maintain the alignment.
     }
     return description;
   };
@@ -103,7 +104,7 @@ return (
               </b>
               <b className="relative [text-decoration:underline] tracking-[0.02em] leading-[180%] inline-block min-w-[116px] z-[1] mt-[-28px] mq450:text-base mq450:leading-[29px] bottom mt-4">
                 <a href={articles[0].url}>
-                  Read more..
+                  Read More...
                 </a>
               </b>
             </div>

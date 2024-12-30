@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
 import { forwardRef } from "react";
+import { Link } from "react-router-dom";
+
 const PlatformOverview = forwardRef(({ className = "" }, ref) => {
   return (
     <section ref={ref}
@@ -62,10 +64,12 @@ const PlatformOverview = forwardRef(({ className = "" }, ref) => {
                   FOR STUDENTS
                 </h3>
               </div>
-              <button className="cursor-pointer [border:none] pt-6 px-[39px] pb-[23px] bg-midnightblue rounded-61xl flex flex-row items-start justify-start whitespace-nowrap z-[2] hover:bg-darkslateblue-400">
+              <button className="cursor-pointer border-[1px] border-solid border-white pt-6 px-[39px] pb-[23px] bg-[transparent] rounded-61xl flex flex-row items-start justify-start whitespace-nowrap z-[2] hover:bg-darkslateblue-400">
                 <div className="h-20 w-[283px] relative rounded-61xl bg-midnightblue hidden" />
                 <b className="relative text-3xl font-poppins text-white text-center z-[1]">
+                  <Link to="/access-code-reg" className="text-white no-underline">
                   Enter access code
+                  </Link>
                 </b>
               </button>
             </div>

@@ -11,7 +11,7 @@ import FrameComponent from "../components/FrameComponent";
 import Testimonials from "../components/Testimonials";
 import LatestUpdates from "../components/LatestUpdates";
 import Footer from "../components/Footer";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const ELearning = () => {
   const coursesRef = useRef(null);
@@ -19,16 +19,20 @@ const ELearning = () => {
   const featuresRef = useRef(null);
   const exploreRef=useRef(null);
   const aboutRef=useRef(null);
+
+  const [refreshDate, setRefreshDate] = useState(null);
+  
+  const componentAClicked = () => setRefreshDate(new Date())
   return (
-    <div className="w-full relative bg-white overflow-hidden flex flex-col items-end justify-start pt-[52.2px] px-0 pb-0 box-border gap-[160px] leading-[normal] tracking-[normal] mq850:gap-[40px] mq1225:gap-[80px]">
-      <MainHeader 
+    <div className="w-full items-center relative bg-white overflow-hidden flex flex-col items-end justify-start px-0 pb-0 box-border gap-[160px] leading-[normal] tracking-[normal] mq850:gap-[40px] mq1225:gap-[80px] overflow-y-scroll " style={{height: "125vh",scrollbarWidth: "none"}}>
+      <MainHeader  refreshDate={refreshDate}
       coursesRef={coursesRef}
       articleRef={articleRef}
       featuresRef={featuresRef}
       exploreRef={exploreRef}
       aboutRef={aboutRef}
       />
-      <FrameComponent4 />
+      <FrameComponent4 componentAClicked={componentAClicked}/>
       <section className="w-[1779px] flex flex-row items-start justify-center py-0 px-5 box-border max-w-full text-left text-17xl text-navy font-poppins">
         <div className="w-[837px] flex flex-col items-start justify-start gap-[20px] max-w-full">
           <div className="self-stretch flex flex-row items-start justify-center py-0 pr-5 pl-[90px] mq450:pl-5 mq450:box-border mq850:pl-[45px] mq850:box-border">
@@ -70,13 +74,8 @@ const ELearning = () => {
       <FrameComponent ref={coursesRef}/>
       <Testimonials />
       <LatestUpdates ref={articleRef}/>
-      <section className="w-full h-[1130px] absolute !m-[0] top-[0px] right-[0px] left-[0px]">
-        <img
-          className="absolute top-[-230px] left-[-98px] w-[2196.5px] h-[1360px]"
-          alt=""
-          src="/footer-top-shape.svg"
-        />
-        <div className="absolute top-[104px] left-[977px] w-[845px] h-[1026px] bg-[url('/public/pngtransparentgirlusinglaptopthumbnailremovebgpreview-1-1-1@2x.png')] bg-cover bg-no-repeat bg-[top] z-[3]">
+      <section className="w-full flex justify-center h-[1130px] absolute !m-[0] top-[0px] right-[0px] left-[0px] bg-darkslategray">
+        <div className="relative top-[104px] left-[477px] w-[845px] max-w-[845px  ] h-[1026px] bg-[url('/public/pngtransparentgirlusinglaptopthumbnailremovebgpreview-1-1-1@2x.png')] bg-cover bg-no-repeat bg-[top] z-[3]">
           <img
             className="absolute top-[0px] left-[0px] w-full h-full object-cover hidden"
             alt=""
@@ -91,20 +90,6 @@ const ELearning = () => {
             />
           </div>
         </div>
-        <div className="absolute top-[672px] left-[394px] w-20 h-20 z-[1] flex items-center justify-center">
-          <img
-            className="w-full h-full z-[1] object-contain absolute left-[2px] top-[20px] [transform:scale(2.5)]"
-            loading="lazy"
-            alt=""
-            src="/group-4.svg"
-          />
-        </div>
-        <img
-          className="absolute top-[50px] left-[74px] w-[93.8px] h-[83.2px] z-[1]"
-          loading="lazy"
-          alt=""
-          src="/group-453.svg"
-        />
       </section>
       <Footer />
     </div>

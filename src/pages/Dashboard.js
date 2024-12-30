@@ -3,8 +3,11 @@ import Navigation1 from "../components/Navigation1";
 import ProgressBar from "../components/ProgressBar";
 import ProfileCard from "../components/ProfileCard";
 import Chatbot from "../components/Chatbot";
+import { useLocation } from "react-router-dom";
 
 const Dashboard = () => {
+  const { state } = useLocation(); // Retrieve data from navigate
+  const { firstName, lastName, institute, course } = state || {};
   return (
     <>
       <div
@@ -174,8 +177,8 @@ const Dashboard = () => {
                         z-index: 2;
                       `}
                     >
-                      <span className={css``}>Welcome back, V</span>
-                      <span className={css``}>ishnu</span>
+                      <span className={css``}>Welcome back, {firstName[0]}</span>
+                      <span className={css``}>{firstName.slice(1)}</span>
                       <span className={css``}>
                         ! Your progress is really good. Keep it up
                       </span>
@@ -603,7 +606,7 @@ const Dashboard = () => {
                         }
                       `}
                     >
-                      Course name
+                      {course}
                     </div>
                   </div>
                   <div
@@ -1872,7 +1875,11 @@ const Dashboard = () => {
             alt=""
             src="/rectangle-1.svg"
           /> */}
-            <ProfileCard />
+            <ProfileCard
+              firstName={firstName}
+              lastName={lastName}
+              institute={institute}
+            />
           </div>
         </main>
       </div>

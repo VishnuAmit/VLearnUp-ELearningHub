@@ -23,7 +23,7 @@ const FrameComponent3 = ({ className = "" }) => {
             </b>
           </div>
         </div>
-        <div className="h-[512px] w-[676px] relative min-w-[676px] max-w-full mq850:min-w-full mq1225:flex-1">
+        <div className="h-[512px] w-[676px] relative min-w-[676px] max-w-full mq850:min-w-full m-auto">
           <div className="absolute top-[281px] left-[514px] rounded-xl bg-orange w-[162px] h-[231px]" />
           <div className="absolute top-[0px] left-[0px] rounded-xl bg-navy w-[138px] h-[138px]" />
           <img
